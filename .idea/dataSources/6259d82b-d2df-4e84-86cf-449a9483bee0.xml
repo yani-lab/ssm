@@ -18,1296 +18,2221 @@
     </schema>
     <schema id="10" parent="1" name="t234"/>
     <schema id="11" parent="1" name="test"/>
-    <table id="12" parent="9" name="account"/>
-    <table id="13" parent="9" name="accountflow"/>
-    <table id="14" parent="9" name="bid"/>
-    <table id="15" parent="9" name="bidrequest"/>
-    <table id="16" parent="9" name="bidrequestaudithistory"/>
-    <table id="17" parent="9" name="companybankinfo"/>
-    <table id="18" parent="9" name="emailverify"/>
-    <table id="19" parent="9" name="iplog"/>
-    <table id="20" parent="9" name="logininfo"/>
-    <table id="21" parent="9" name="mailverify"/>
-    <table id="22" parent="9" name="moneywithdraw"/>
-    <table id="23" parent="9" name="paymentschedule"/>
-    <table id="24" parent="9" name="paymentscheduledetail"/>
-    <table id="25" parent="9" name="platformbankinfo"/>
-    <table id="26" parent="9" name="realauth"/>
-    <table id="27" parent="9" name="rechargeoffline"/>
-    <table id="28" parent="9" name="systemaccount"/>
-    <table id="29" parent="9" name="systemaccountflow"/>
-    <table id="30" parent="9" name="systemdictionary"/>
-    <table id="31" parent="9" name="systemdictionaryitem"/>
-    <table id="32" parent="9" name="userbankinfo"/>
-    <table id="33" parent="9" name="userfile"/>
-    <table id="34" parent="9" name="userinfo"/>
-    <table id="35" parent="9" name="videoauth"/>
-    <column id="36" parent="12" name="id">
+    <table id="12" parent="9" name="t_account"/>
+    <table id="13" parent="9" name="t_accountflow"/>
+    <table id="14" parent="9" name="t_bidrequest"/>
+    <table id="15" parent="9" name="t_bidrequestaudithistory"/>
+    <table id="16" parent="9" name="t_companybankinfo"/>
+    <table id="17" parent="9" name="t_contractindetail"/>
+    <table id="18" parent="9" name="t_contracttable"/>
+    <table id="19" parent="9" name="t_emailverify"/>
+    <table id="20" parent="9" name="t_installmenttype"/>
+    <table id="21" parent="9" name="t_integral"/>
+    <table id="22" parent="9" name="t_integral_list"/>
+    <table id="23" parent="9" name="t_iplog"/>
+    <table id="24" parent="9" name="t_loanstable"/>
+    <table id="25" parent="9" name="t_logininfo"/>
+    <table id="26" parent="9" name="t_loloanapplication"/>
+    <table id="27" parent="9" name="t_mailverify"/>
+    <table id="28" parent="9" name="t_moneywithdraw"/>
+    <table id="29" parent="9" name="t_overduepayment"/>
+    <table id="30" parent="9" name="t_overduetype"/>
+    <table id="31" parent="9" name="t_paymentschedule"/>
+    <table id="32" parent="9" name="t_paymentscheduledetail"/>
+    <table id="33" parent="9" name="t_platformbankinfo"/>
+    <table id="34" parent="9" name="t_producttable"/>
+    <table id="35" parent="9" name="t_realauth"/>
+    <table id="36" parent="9" name="t_rechargeoffline"/>
+    <table id="37" parent="9" name="t_repayment"/>
+    <table id="38" parent="9" name="t_sys_menu"/>
+    <table id="39" parent="9" name="t_sys_menu_role"/>
+    <table id="40" parent="9" name="t_sys_permission"/>
+    <table id="41" parent="9" name="t_sys_role"/>
+    <table id="42" parent="9" name="t_sys_role_permission"/>
+    <table id="43" parent="9" name="t_sys_temaccount"/>
+    <table id="44" parent="9" name="t_sys_temaccountflow"/>
+    <table id="45" parent="9" name="t_sys_temdictionary"/>
+    <table id="46" parent="9" name="t_sys_temdictionaryitem"/>
+    <table id="47" parent="9" name="t_sys_user"/>
+    <table id="48" parent="9" name="t_sys_user_role"/>
+    <table id="49" parent="9" name="t_userbankinfo"/>
+    <table id="50" parent="9" name="t_userfile"/>
+    <table id="51" parent="9" name="t_userinfo"/>
+    <table id="52" parent="9" name="t_videoauth"/>
+    <table id="53" parent="9" name="t_vip"/>
+    <column id="54" parent="12" name="ac_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="12" name="tradePassword">
+    <column id="55" parent="12" name="usableAmount">
       <Position>2</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
+      <DataType>DECIMAL(18,4)|3s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="12" name="usableAmount">
+    <column id="56" parent="12" name="freezedAmount">
       <Position>3</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="39" parent="12" name="freezedAmount">
+    <column id="57" parent="12" name="version">
       <Position>4</Position>
-      <DataType>DECIMAL(18,4)|3s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="40" parent="12" name="version">
-      <Position>5</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="12" name="unReceiveInterest">
+    <column id="58" parent="12" name="unReceiveInterest">
+      <Position>5</Position>
+      <DataType>DECIMAL(18,4)|3s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="12" name="unReceivePrincipal">
       <Position>6</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="12" name="unReceivePrincipal">
+    <column id="60" parent="12" name="unReturnAmount">
       <Position>7</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="12" name="unReturnAmount">
+    <column id="61" parent="12" name="remainBorrowLimit">
       <Position>8</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="12" name="remainBorrowLimit">
+    <column id="62" parent="12" name="borrowLimit">
       <Position>9</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="12" name="borrowLimit">
+    <column id="63" parent="12" name="user_id">
       <Position>10</Position>
-      <DataType>DECIMAL(18,4)|3s</DataType>
+      <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="46" parent="12" name="PRIMARY">
+    <index id="64" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>ac_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="12" name="PRIMARY">
+    <key id="65" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>ac_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="13" name="id">
+    <column id="66" parent="13" name="af_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="49" parent="13" name="amount">
+    <column id="67" parent="13" name="amount">
       <Position>2</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="13" name="note">
+    <column id="68" parent="13" name="note">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="51" parent="13" name="tradeTime">
+    <column id="69" parent="13" name="tradeTime">
       <Position>4</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="52" parent="13" name="actionType">
+    <column id="70" parent="13" name="actionType">
       <Position>5</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="53" parent="13" name="account_id">
+    <column id="71" parent="13" name="account_id">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="13" name="usableAmount">
+    <column id="72" parent="13" name="usableAmount">
       <Position>7</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="55" parent="13" name="freezedAmount">
+    <column id="73" parent="13" name="freezedAmount">
       <Position>8</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="56" parent="13" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="57" parent="13" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="58" parent="14" name="id">
-      <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="59" parent="14" name="actualRate">
-      <Position>2</Position>
-      <DataType>DECIMAL(8,4)|3s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="60" parent="14" name="availableAmount">
-      <Position>3</Position>
-      <DataType>DECIMAL(18,4)|3s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="61" parent="14" name="bidrequest_id">
-      <Position>4</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="62" parent="14" name="bidUser_id">
-      <Position>5</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="63" parent="14" name="bidTime">
-      <Position>6</Position>
-      <DataType>DATETIME(19)|93s</DataType>
+    <column id="74" parent="13" name="grantpeople">
+      <Position>9</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="64" parent="14" name="bidRequestTitle">
-      <Position>7</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="65" parent="14" name="bidRequestState">
-      <Position>8</Position>
-      <DataType>INT(10)|4s</DataType>
+    <column id="75" parent="13" name="allocateAmount">
+      <Position>10</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="66" parent="14" name="PRIMARY">
+    <index id="76" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>af_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="67" parent="14" name="PRIMARY">
+    <key id="77" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>af_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="68" parent="15" name="id">
+    <column id="78" parent="14" name="bid_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="69" parent="15" name="version">
+    <column id="79" parent="14" name="version">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="15" name="returnType">
+    <column id="80" parent="14" name="returnType">
       <Position>3</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="71" parent="15" name="bidRequestType">
+    <column id="81" parent="14" name="bidRequestType">
       <Position>4</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="72" parent="15" name="bidRequestState">
+    <column id="82" parent="14" name="bidRequestState">
       <Position>5</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="73" parent="15" name="bidRequestAmount">
+    <column id="83" parent="14" name="bidRequestAmount">
       <Position>6</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="74" parent="15" name="currentRate">
+    <column id="84" parent="14" name="currentRate">
       <Position>7</Position>
       <DataType>DECIMAL(8,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="75" parent="15" name="monthes2Return">
+    <column id="85" parent="14" name="monthesReturn">
       <Position>8</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="76" parent="15" name="bidCount">
+    <column id="86" parent="14" name="bidCount">
       <Position>9</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="77" parent="15" name="totalRewardAmount">
+    <column id="87" parent="14" name="totalRewardAmount">
       <Position>10</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="78" parent="15" name="currentSum">
+    <column id="88" parent="14" name="currentSum">
       <Position>11</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="15" name="title">
+    <column id="89" parent="14" name="title">
       <Position>12</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="80" parent="15" name="description">
+    <column id="90" parent="14" name="description">
       <Position>13</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="81" parent="15" name="note">
+    <column id="91" parent="14" name="note">
       <Position>14</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="82" parent="15" name="disableDate">
+    <column id="92" parent="14" name="disableDate">
       <Position>15</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="83" parent="15" name="createuser_id">
+    <column id="93" parent="14" name="createuser_id">
       <Position>16</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="84" parent="15" name="disableDays">
+    <column id="94" parent="14" name="disableDays">
       <Position>17</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="85" parent="15" name="minBidAmount">
+    <column id="95" parent="14" name="minBidAmount">
       <Position>18</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="86" parent="15" name="applyTime">
+    <column id="96" parent="14" name="applyTime">
       <Position>19</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="87" parent="15" name="publishTime">
+    <column id="97" parent="14" name="publishTime">
       <Position>20</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <index id="88" parent="15" name="PRIMARY">
+    <index id="98" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>bid_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="15" name="PRIMARY">
+    <key id="99" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>bid_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="90" parent="16" name="id">
+    <column id="100" parent="15" name="br_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="91" parent="16" name="state">
+    <column id="101" parent="15" name="state">
       <Position>2</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="92" parent="16" name="remark">
+    <column id="102" parent="15" name="remark">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="93" parent="16" name="auditTime">
+    <column id="103" parent="15" name="auditTime">
       <Position>4</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="94" parent="16" name="applyTime">
+    <column id="104" parent="15" name="applyTime">
       <Position>5</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="95" parent="16" name="auditor_id">
+    <column id="105" parent="15" name="auditor_id">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="96" parent="16" name="applier_id">
+    <column id="106" parent="15" name="applier_id">
       <Position>7</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="97" parent="16" name="bidRequestId">
+    <column id="107" parent="15" name="bidRequestId">
       <Position>8</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="98" parent="16" name="auditType">
+    <column id="108" parent="15" name="auditType">
       <Position>9</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="99" parent="16" name="PRIMARY">
+    <index id="109" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>br_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="100" parent="16" name="PRIMARY">
+    <key id="110" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>br_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="101" parent="17" name="id">
+    <column id="111" parent="16" name="co_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="102" parent="17" name="bankname">
+    <column id="112" parent="16" name="bankname">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="103" parent="17" name="accountname">
+    <column id="113" parent="16" name="accountname">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="104" parent="17" name="banknumber">
+    <column id="114" parent="16" name="banknumber">
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="105" parent="17" name="bankforkname">
+    <column id="115" parent="16" name="bankforkname">
       <Position>5</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="106" parent="17" name="iconCls">
+    <column id="116" parent="16" name="iconCls">
       <Position>6</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="107" parent="17" name="PRIMARY">
+    <index id="117" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>co_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="108" parent="17" name="PRIMARY">
+    <key id="118" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>co_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="109" parent="18" name="id">
+    <column id="119" parent="17" name="cot_id">
       <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="110" parent="18" name="email">
+    <column id="120" parent="17" name="loanType">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="111" parent="18" name="userinfo_id">
+    <column id="121" parent="17" name="owner">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="122" parent="17" name="oarty">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="123" parent="17" name="paymentType">
+      <Position>5</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="124" parent="17" name="installmentType">
+      <Position>6</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="125" parent="17" name="loanTime">
+      <Position>7</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="126" parent="17" name="repaymentTime">
+      <Position>8</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="127" parent="17" name="bankaccount">
+      <Position>9</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="128" parent="17" name="mandator">
+      <Position>10</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="129" parent="17" name="contents">
+      <Position>11</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="130" parent="17" name="organization">
+      <Position>12</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="131" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cot_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="132" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cot_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="133" parent="18" name="cott_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="134" parent="18" name="indetail_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="18" name="content">
+      <Position>3</Position>
+      <DataType>VARCHAR(1024)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="136" parent="18" name="creationDate">
+      <Position>4</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="137" parent="18" name="effectiveDate">
+      <Position>5</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="138" parent="18" name="status">
+      <Position>6</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="139" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cott_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="140" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cott_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="141" parent="19" name="em_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="142" parent="19" name="email">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="143" parent="19" name="userinfo_id">
       <Position>3</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="112" parent="18" name="sendTime">
+    <column id="144" parent="19" name="sendTime">
       <Position>4</Position>
       <DataType>TIMESTAMP(19)|93s</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="113" parent="18" name="uuid">
+    <column id="145" parent="19" name="uuid">
       <Position>5</Position>
       <DataType>VARCHAR(40)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="114" parent="18" name="PRIMARY">
+    <index id="146" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>em_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="115" parent="18" name="PRIMARY">
+    <key id="147" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>em_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="116" parent="19" name="id">
+    <column id="148" parent="20" name="it_id">
       <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="117" parent="19" name="ip">
+    <column id="149" parent="20" name="stagetypename">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="118" parent="19" name="state">
+    <column id="150" parent="20" name="interests">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="151" parent="20" name="perioddays">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="152" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>it_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="153" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>it_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="154" parent="21" name="cuser_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="155" parent="21" name="user_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="156" parent="21" name="cuser_realname">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="157" parent="21" name="c_redit">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="158" parent="21" name="c_member">
+      <Position>5</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="159" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cuser_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="160" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cuser_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="161" parent="22" name="inte_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="162" parent="22" name="cuser_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="163" parent="22" name="rep_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="164" parent="22" name="inte_redit">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="165" parent="22" name="inte_member">
+      <Position>5</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="166" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inte_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="167" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inte_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="168" parent="23" name="ip_id">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="169" parent="23" name="ip">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="170" parent="23" name="state">
       <Position>3</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="119" parent="19" name="username">
+    <column id="171" parent="23" name="username">
       <Position>4</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="120" parent="19" name="logininfoid">
+    <column id="172" parent="23" name="logininfoid">
       <Position>5</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="121" parent="19" name="userType">
+    <column id="173" parent="23" name="userType">
       <Position>6</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="122" parent="19" name="logintime">
+    <column id="174" parent="23" name="logintime">
       <Position>7</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="123" parent="19" name="PRIMARY">
+    <index id="175" parent="23" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>ip_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="124" parent="19" name="PRIMARY">
+    <key id="176" parent="23" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>ip_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="125" parent="20" name="id">
+    <column id="177" parent="24" name="lo_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="178" parent="24" name="applyforloanid">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="179" parent="24" name="userid">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="180" parent="24" name="bankcard">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="181" parent="24" name="loantime">
+      <Position>5</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="182" parent="24" name="money">
+      <Position>6</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="183" parent="24" name="stagetype_id">
+      <Position>7</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="184" parent="24" name="repayment">
+      <Position>8</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="185" parent="24" name="should">
+      <Position>9</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="186" parent="24" name="interestrate">
+      <Position>10</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="187" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>lo_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="188" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>lo_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="189" parent="25" name="login_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="126" parent="20" name="username">
+    <column id="190" parent="25" name="username">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="127" parent="20" name="password">
+    <column id="191" parent="25" name="password">
       <Position>3</Position>
       <DataType>VARCHAR(200)|12s</DataType>
     </column>
-    <column id="128" parent="20" name="state">
+    <column id="192" parent="25" name="state">
       <Position>4</Position>
       <DataType>TINYINT(3)|-6s</DataType>
     </column>
-    <column id="129" parent="20" name="userType">
+    <column id="193" parent="25" name="userType">
       <Position>5</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <index id="130" parent="20" name="PRIMARY">
+    <index id="194" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>login_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="131" parent="20" name="PRIMARY">
+    <key id="195" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>login_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="132" parent="21" name="id">
+    <column id="196" parent="26" name="lolo_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="197" parent="26" name="userid">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="198" parent="26" name="appliedamount">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="199" parent="26" name="bankcard">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="200" parent="26" name="houselicense">
+      <Position>5</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="201" parent="26" name="drivinglicense">
+      <Position>6</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="202" parent="26" name="bidtype">
+      <Position>7</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="203" parent="26" name="installmentstate">
+      <Position>8</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="204" parent="26" name="applicationstatus">
+      <Position>9</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="205" parent="26" name="handlerid">
+      <Position>10</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="206" parent="26" name="applicationtime">
+      <Position>11</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="207" parent="26" name="reason">
+      <Position>12</Position>
+      <DataType>VARCHAR(1024)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="208" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>lolo_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="209" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>lolo_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="210" parent="27" name="mail_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="133" parent="21" name="userinfo_id">
+    <column id="211" parent="27" name="userinfo_id">
       <Position>2</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="134" parent="21" name="deadline">
+    <column id="212" parent="27" name="deadline">
       <Position>3</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="135" parent="21" name="randomcode">
+    <column id="213" parent="27" name="randomcode">
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="136" parent="21" name="PRIMARY">
+    <index id="214" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>mail_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="137" parent="21" name="PRIMARY">
+    <key id="215" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>mail_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="138" parent="22" name="id">
+    <column id="216" parent="28" name="mo_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="139" parent="22" name="state">
+    <column id="217" parent="28" name="state">
       <Position>2</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="140" parent="22" name="remark">
+    <column id="218" parent="28" name="remark">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="141" parent="22" name="auditTime">
+    <column id="219" parent="28" name="auditTime">
       <Position>4</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="142" parent="22" name="applyTime">
+    <column id="220" parent="28" name="applyTime">
       <Position>5</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="143" parent="22" name="auditor_id">
+    <column id="221" parent="28" name="auditor_id">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="144" parent="22" name="applier_id">
+    <column id="222" parent="28" name="applier_id">
       <Position>7</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="145" parent="22" name="amount">
+    <column id="223" parent="28" name="amount">
       <Position>8</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="146" parent="22" name="fee">
+    <column id="224" parent="28" name="fee">
       <Position>9</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="147" parent="22" name="bankName">
+    <column id="225" parent="28" name="bankName">
       <Position>10</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="148" parent="22" name="accountName">
+    <column id="226" parent="28" name="accountName">
       <Position>11</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="149" parent="22" name="accountNumber">
+    <column id="227" parent="28" name="accountNumber">
       <Position>12</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="150" parent="22" name="forkName">
+    <column id="228" parent="28" name="forkName">
       <Position>13</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <index id="151" parent="22" name="PRIMARY">
+    <index id="229" parent="28" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>mo_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="152" parent="22" name="PRIMARY">
+    <key id="230" parent="28" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>mo_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="153" parent="23" name="id">
+    <column id="231" parent="29" name="ovd_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="232" parent="29" name="overdue_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="233" parent="29" name="days">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="234" parent="29" name="type_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="235" parent="29" name="handler_id">
+      <Position>5</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="236" parent="29" name="handler_name">
+      <Position>6</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="237" parent="29" name="mode">
+      <Position>7</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="238" parent="29" name="result">
+      <Position>8</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="239" parent="29" name="remark">
+      <Position>9</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <index id="240" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ovd_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="241" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ovd_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="242" parent="30" name="ovt_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="243" parent="30" name="range">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="244" parent="30" name="rateofinterest">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="245" parent="30" name="status">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="246" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ovt_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="247" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ovt_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="248" parent="31" name="pm_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="154" parent="23" name="deadLine">
+    <column id="249" parent="31" name="deadLine">
       <Position>2</Position>
       <DataType>TIMESTAMP(19)|93s</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="155" parent="23" name="payDate">
+    <column id="250" parent="31" name="payDate">
       <Position>3</Position>
       <DataType>TIMESTAMP(19)|93s</DataType>
       <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
     </column>
-    <column id="156" parent="23" name="totalAmount">
+    <column id="251" parent="31" name="totalAmount">
       <Position>4</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="157" parent="23" name="principal">
+    <column id="252" parent="31" name="principal">
       <Position>5</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="158" parent="23" name="interest">
+    <column id="253" parent="31" name="interest">
       <Position>6</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="159" parent="23" name="monthIndex">
+    <column id="254" parent="31" name="monthIndex">
       <Position>7</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="160" parent="23" name="state">
+    <column id="255" parent="31" name="state">
       <Position>8</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <column id="161" parent="23" name="bidRequestType">
+    <column id="256" parent="31" name="bidRequestType">
       <Position>9</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <column id="162" parent="23" name="returnType">
+    <column id="257" parent="31" name="returnType">
       <Position>10</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <column id="163" parent="23" name="bidRequestTitle">
+    <column id="258" parent="31" name="bidRequestTitle">
       <Position>11</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="164" parent="23" name="borrowUser_id">
+    <column id="259" parent="31" name="borrowUser_id">
       <Position>12</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="165" parent="23" name="bidRequest_id">
+    <column id="260" parent="31" name="bidRequest_id">
       <Position>13</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <index id="166" parent="23" name="PRIMARY">
+    <index id="261" parent="31" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>pm_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="167" parent="23" name="PRIMARY">
+    <key id="262" parent="31" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>pm_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="168" parent="24" name="id">
+    <column id="263" parent="32" name="pmd_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="169" parent="24" name="bidAmount">
+    <column id="264" parent="32" name="bidAmount">
       <Position>2</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="170" parent="24" name="bid_id">
+    <column id="265" parent="32" name="bid_id">
       <Position>3</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="171" parent="24" name="totalAmount">
+    <column id="266" parent="32" name="totalAmount">
       <Position>4</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="172" parent="24" name="principal">
+    <column id="267" parent="32" name="principal">
       <Position>5</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="173" parent="24" name="interest">
+    <column id="268" parent="32" name="interest">
       <Position>6</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="174" parent="24" name="monthIndex">
+    <column id="269" parent="32" name="monthIndex">
       <Position>7</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <column id="175" parent="24" name="deadLine">
+    <column id="270" parent="32" name="deadLine">
       <Position>8</Position>
       <DataType>TIMESTAMP(19)|93s</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="176" parent="24" name="bidrequest_id">
+    <column id="271" parent="32" name="bidrequest_id">
       <Position>9</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="177" parent="24" name="payDate">
+    <column id="272" parent="32" name="payDate">
       <Position>10</Position>
       <DataType>TIMESTAMP(19)|93s</DataType>
       <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
     </column>
-    <column id="178" parent="24" name="returnType">
+    <column id="273" parent="32" name="returnType">
       <Position>11</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <column id="179" parent="24" name="paymentSchedule_id">
+    <column id="274" parent="32" name="paymentSchedule_id">
       <Position>12</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="180" parent="24" name="fromLogininfo_id">
+    <column id="275" parent="32" name="fromLogininfo_id">
       <Position>13</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="181" parent="24" name="toLogininfo_id">
+    <column id="276" parent="32" name="toLogininfo_id">
       <Position>14</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="182" parent="24" name="PRIMARY">
+    <index id="277" parent="32" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>pmd_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="183" parent="24" name="PRIMARY">
+    <key id="278" parent="32" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>pmd_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="184" parent="25" name="id">
+    <column id="279" parent="33" name="pf_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="185" parent="25" name="bankName">
+    <column id="280" parent="33" name="bankName">
       <Position>2</Position>
       <DataType>VARCHAR(100)|12s</DataType>
     </column>
-    <column id="186" parent="25" name="accountName">
+    <column id="281" parent="33" name="accountName">
       <Position>3</Position>
       <DataType>VARCHAR(100)|12s</DataType>
     </column>
-    <column id="187" parent="25" name="accountNumber">
+    <column id="282" parent="33" name="accountNumber">
       <Position>4</Position>
       <DataType>VARCHAR(100)|12s</DataType>
     </column>
-    <column id="188" parent="25" name="forkName">
+    <column id="283" parent="33" name="forkName">
       <Position>5</Position>
       <DataType>VARCHAR(100)|12s</DataType>
     </column>
-    <column id="189" parent="25" name="iconCls">
+    <column id="284" parent="33" name="iconCls">
       <Position>6</Position>
       <DataType>VARCHAR(100)|12s</DataType>
     </column>
-    <index id="190" parent="25" name="PRIMARY">
+    <index id="285" parent="33" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>pf_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="191" parent="25" name="PRIMARY">
+    <key id="286" parent="33" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>pf_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="192" parent="26" name="id">
+    <column id="287" parent="34" name="pro_id">
       <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="193" parent="26" name="realname">
+    <column id="288" parent="34" name="pro_name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="194" parent="26" name="sex">
+    <column id="289" parent="34" name="money">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="290" parent="34" name="interest">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="291" parent="34" name="time">
+      <Position>5</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="292" parent="34" name="require">
+      <Position>6</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="293" parent="34" name="scope">
+      <Position>7</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="294" parent="34" name="lineofcredit">
+      <Position>8</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="295" parent="34" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pro_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="296" parent="34" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pro_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="297" parent="35" name="real_id">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="298" parent="35" name="realname">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="299" parent="35" name="sex">
       <Position>3</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="195" parent="26" name="bornDate">
+    <column id="300" parent="35" name="bornDate">
       <Position>4</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="196" parent="26" name="idNumber">
+    <column id="301" parent="35" name="idNumber">
       <Position>5</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="197" parent="26" name="address">
+    <column id="302" parent="35" name="address">
       <Position>6</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="198" parent="26" name="state">
+    <column id="303" parent="35" name="state">
       <Position>7</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="199" parent="26" name="image1">
+    <column id="304" parent="35" name="image1">
       <Position>8</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="200" parent="26" name="image2">
+    <column id="305" parent="35" name="image2">
       <Position>9</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="201" parent="26" name="remark">
+    <column id="306" parent="35" name="remark">
       <Position>10</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="202" parent="26" name="auditTime">
+    <column id="307" parent="35" name="auditTime">
       <Position>11</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="203" parent="26" name="applyTime">
+    <column id="308" parent="35" name="applyTime">
       <Position>12</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="204" parent="26" name="auditor_id">
+    <column id="309" parent="35" name="auditor_id">
       <Position>13</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="205" parent="26" name="applier_id">
+    <column id="310" parent="35" name="applier_id">
       <Position>14</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="206" parent="26" name="PRIMARY">
+    <index id="311" parent="35" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>real_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="207" parent="26" name="PRIMARY">
+    <key id="312" parent="35" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>real_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="208" parent="27" name="id">
+    <column id="313" parent="36" name="rech_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="209" parent="27" name="state">
+    <column id="314" parent="36" name="state">
       <Position>2</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="210" parent="27" name="remark">
+    <column id="315" parent="36" name="remark">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="211" parent="27" name="auditTime">
+    <column id="316" parent="36" name="auditTime">
       <Position>4</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="212" parent="27" name="applyTime">
+    <column id="317" parent="36" name="applyTime">
       <Position>5</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="213" parent="27" name="auditor_id">
+    <column id="318" parent="36" name="auditor_id">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="214" parent="27" name="applier_id">
+    <column id="319" parent="36" name="applier_id">
       <Position>7</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="215" parent="27" name="tradeCode">
+    <column id="320" parent="36" name="tradeCode">
       <Position>8</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="216" parent="27" name="tradeTime">
+    <column id="321" parent="36" name="tradeTime">
       <Position>9</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="217" parent="27" name="amount">
+    <column id="322" parent="36" name="amount">
       <Position>10</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="218" parent="27" name="note">
+    <column id="323" parent="36" name="note">
       <Position>11</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="219" parent="27" name="bankinfo_id">
+    <column id="324" parent="36" name="bankinfo_id">
       <Position>12</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="220" parent="27" name="PRIMARY">
+    <index id="325" parent="36" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>rech_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="221" parent="27" name="PRIMARY">
+    <key id="326" parent="36" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>rech_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="222" parent="28" name="id">
+    <column id="327" parent="37" name="rep_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="328" parent="37" name="user_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="329" parent="37" name="bid_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="330" parent="37" name="lo_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="331" parent="37" name="fen_type">
+      <Position>5</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="332" parent="37" name="capital">
+      <Position>6</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="333" parent="37" name="interest">
+      <Position>7</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="334" parent="37" name="refu_money">
+      <Position>8</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="335" parent="37" name="repayType">
+      <Position>9</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="336" parent="37" name="reality_money">
+      <Position>10</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="337" parent="37" name="refu_time">
+      <Position>11</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="338" parent="37" name="reality_time">
+      <Position>12</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+    </column>
+    <column id="339" parent="37" name="reality_type">
+      <Position>13</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <index id="340" parent="37" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rep_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="341" parent="37" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rep_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="342" parent="38" name="menu_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="343" parent="38" name="menu_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="344" parent="38" name="menu_type">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="345" parent="38" name="parent_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+    </column>
+    <column id="346" parent="38" name="url">
+      <Position>5</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="347" parent="38" name="position">
+      <Position>6</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="348" parent="38" name="icon">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="349" parent="38" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>menu_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="350" parent="38" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>menu_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="351" parent="39" name="mr_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="352" parent="39" name="menu_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="353" parent="39" name="role_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="354" parent="39" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>mr_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="355" parent="39" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>mr_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="356" parent="40" name="permission_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="357" parent="40" name="permission_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="358" parent="40" name="level">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="359" parent="40" name="parent_permission_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+    </column>
+    <column id="360" parent="40" name="available">
+      <Position>5</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="361" parent="40" name="permission">
+      <Position>6</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="362" parent="40" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="363" parent="40" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>permission_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="364" parent="41" name="role_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="365" parent="41" name="role_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="366" parent="41" name="available">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="367" parent="41" name="description">
+      <Position>4</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="368" parent="41" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="369" parent="41" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="370" parent="42" name="rr_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="371" parent="42" name="role_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="372" parent="42" name="permission_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="373" parent="42" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rr_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="374" parent="42" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rr_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="375" parent="43" name="sysa_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="223" parent="28" name="version">
+    <column id="376" parent="43" name="version">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
     </column>
-    <column id="224" parent="28" name="usableAmount">
+    <column id="377" parent="43" name="usableAmount">
       <Position>3</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <column id="225" parent="28" name="freezedAmount">
+    <column id="378" parent="43" name="freezedAmount">
       <Position>4</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
     </column>
-    <index id="226" parent="28" name="PRIMARY">
+    <index id="379" parent="43" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysa_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="227" parent="28" name="PRIMARY">
+    <key id="380" parent="43" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysa_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="228" parent="29" name="id">
+    <column id="381" parent="44" name="sysf_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="229" parent="29" name="tradeTime">
+    <column id="382" parent="44" name="tradeTime">
       <Position>2</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="230" parent="29" name="actionType">
+    <column id="383" parent="44" name="actionType">
       <Position>3</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="231" parent="29" name="amount">
+    <column id="384" parent="44" name="amount">
       <Position>4</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="232" parent="29" name="usableAmount">
+    <column id="385" parent="44" name="usableAmount">
       <Position>5</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="233" parent="29" name="freezedAmount">
+    <column id="386" parent="44" name="freezedAmount">
       <Position>6</Position>
       <DataType>DECIMAL(18,4)|3s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="234" parent="29" name="note">
+    <column id="387" parent="44" name="note">
       <Position>7</Position>
       <DataType>VARCHAR(200)|12s</DataType>
     </column>
-    <index id="235" parent="29" name="PRIMARY">
+    <index id="388" parent="44" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysf_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="236" parent="29" name="PRIMARY">
+    <key id="389" parent="44" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysf_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="237" parent="30" name="id">
+    <column id="390" parent="45" name="sysd_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="238" parent="30" name="sn">
+    <column id="391" parent="45" name="sn">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="239" parent="30" name="title">
+    <column id="392" parent="45" name="title">
       <Position>3</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="240" parent="30" name="intro">
+    <column id="393" parent="45" name="intro">
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="241" parent="30" name="PRIMARY">
+    <index id="394" parent="45" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysd_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="242" parent="30" name="PRIMARY">
+    <key id="395" parent="45" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysd_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="243" parent="31" name="id">
+    <column id="396" parent="46" name="sysfi_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="244" parent="31" name="parentId">
+    <column id="397" parent="46" name="parentId">
       <Position>2</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="245" parent="31" name="title">
+    <column id="398" parent="46" name="title">
       <Position>3</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="246" parent="31" name="tvalue">
+    <column id="399" parent="46" name="tvalue">
       <Position>4</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="247" parent="31" name="sequence">
+    <column id="400" parent="46" name="sequence">
       <Position>5</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="248" parent="31" name="intro">
+    <column id="401" parent="46" name="intro">
       <Position>6</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="249" parent="31" name="PRIMARY">
+    <index id="402" parent="46" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysfi_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="250" parent="31" name="PRIMARY">
+    <key id="403" parent="46" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>sysfi_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="251" parent="32" name="id">
+    <column id="404" parent="47" name="user_id">
       <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="252" parent="32" name="bankName">
+    <column id="405" parent="47" name="user_name">
       <Position>2</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="253" parent="32" name="accountName">
+    <column id="406" parent="47" name="user_pwd">
       <Position>3</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="254" parent="32" name="accountNumber">
+    <column id="407" parent="47" name="user_realName">
       <Position>4</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="255" parent="32" name="forkName">
+    <column id="408" parent="47" name="user_email">
       <Position>5</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="256" parent="32" name="logininfo_id">
+    <column id="409" parent="47" name="user_phone">
       <Position>6</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="257" parent="32" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="258" parent="32" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="259" parent="33" name="id">
-      <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="260" parent="33" name="state">
-      <Position>2</Position>
-      <DataType>TINYINT(3)|-6s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="261" parent="33" name="remark">
-      <Position>3</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="262" parent="33" name="auditTime">
-      <Position>4</Position>
-      <DataType>DATETIME(19)|93s</DataType>
-    </column>
-    <column id="263" parent="33" name="applyTime">
-      <Position>5</Position>
-      <DataType>DATETIME(19)|93s</DataType>
-    </column>
-    <column id="264" parent="33" name="auditor_id">
-      <Position>6</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
-    </column>
-    <column id="265" parent="33" name="applier_id">
+    <column id="410" parent="47" name="user_regsitTime">
       <Position>7</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="266" parent="33" name="score">
+    <column id="411" parent="47" name="user_fout">
       <Position>8</Position>
-      <DataType>TINYINT(3)|-6s</DataType>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="267" parent="33" name="file">
+    <column id="412" parent="47" name="user_referrer">
       <Position>9</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="268" parent="33" name="filetype_id">
+    <column id="413" parent="47" name="user_referrer_name">
       <Position>10</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+      <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="269" parent="33" name="image">
+    <column id="414" parent="47" name="user_payto_id">
       <Position>11</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="415" parent="47" name="user_card_id">
+      <Position>12</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="416" parent="47" name="user_head">
+      <Position>13</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="417" parent="47" name="user_pay_pwd">
+      <Position>14</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="270" parent="33" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="271" parent="33" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="272" parent="34" name="id">
-      <Position>1</Position>
-      <DataType>BIGINT(19)|-5s</DataType>
+    <column id="418" parent="47" name="salt">
+      <Position>15</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="419" parent="47" name="locked">
+      <Position>16</Position>
+      <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="273" parent="34" name="version">
+    <index id="420" parent="47" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="421" parent="47" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="422" parent="48" name="ur_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="423" parent="48" name="user_id">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="274" parent="34" name="bitState">
+    <column id="424" parent="48" name="role_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="425" parent="48" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ur_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="426" parent="48" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ur_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="427" parent="49" name="usrb_id">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="428" parent="49" name="bankName">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="429" parent="49" name="accountName">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="430" parent="49" name="accountNumber">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="431" parent="49" name="forkName">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="432" parent="49" name="logininfo_id">
+      <Position>6</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="433" parent="49" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>usrb_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="434" parent="49" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>usrb_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="435" parent="50" name="usrf_id">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="436" parent="50" name="state">
+      <Position>2</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="437" parent="50" name="remark">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="438" parent="50" name="auditTime">
+      <Position>4</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+    </column>
+    <column id="439" parent="50" name="applyTime">
+      <Position>5</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+    </column>
+    <column id="440" parent="50" name="auditor_id">
+      <Position>6</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="441" parent="50" name="applier_id">
+      <Position>7</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="442" parent="50" name="score">
+      <Position>8</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+    </column>
+    <column id="443" parent="50" name="file">
+      <Position>9</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="444" parent="50" name="filetype_id">
+      <Position>10</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="445" parent="50" name="image">
+      <Position>11</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="446" parent="50" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>usrf_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="447" parent="50" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>usrf_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="448" parent="51" name="id">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="449" parent="51" name="version">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="450" parent="51" name="bitState">
       <Position>3</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="275" parent="34" name="realName">
+    <column id="451" parent="51" name="realName">
       <Position>4</Position>
       <DataType>VARCHAR(30)|12s</DataType>
     </column>
-    <column id="276" parent="34" name="score">
+    <column id="452" parent="51" name="score">
       <Position>5</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="277" parent="34" name="realAuthId">
+    <column id="453" parent="51" name="realAuthId">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="278" parent="34" name="idNumber">
+    <column id="454" parent="51" name="idNumber">
       <Position>7</Position>
       <DataType>VARCHAR(30)|12s</DataType>
     </column>
-    <column id="279" parent="34" name="phoneNumber">
+    <column id="455" parent="51" name="phoneNumber">
       <Position>8</Position>
       <DataType>VARCHAR(30)|12s</DataType>
     </column>
-    <column id="280" parent="34" name="incomeGrade_id">
+    <column id="456" parent="51" name="incomeGrade_id">
       <Position>9</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="281" parent="34" name="marriage_id">
+    <column id="457" parent="51" name="marriage_id">
       <Position>10</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="282" parent="34" name="kidCount_id">
+    <column id="458" parent="51" name="kidCount_id">
       <Position>11</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="283" parent="34" name="educationBackground_id">
+    <column id="459" parent="51" name="educationBackground_id">
       <Position>12</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="284" parent="34" name="houseCondition_id">
+    <column id="460" parent="51" name="houseCondition_id">
       <Position>13</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="285" parent="34" name="email">
+    <column id="461" parent="51" name="email">
       <Position>14</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <index id="286" parent="34" name="PRIMARY">
+    <column id="462" parent="51" name="user_id">
+      <Position>15</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="463" parent="51" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="287" parent="34" name="PRIMARY">
+    <key id="464" parent="51" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="288" parent="35" name="id">
+    <column id="465" parent="52" name="vi_id">
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="289" parent="35" name="state">
+    <column id="466" parent="52" name="state">
       <Position>2</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="290" parent="35" name="remark">
+    <column id="467" parent="52" name="remark">
       <Position>3</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="291" parent="35" name="auditTime">
+    <column id="468" parent="52" name="auditTime">
       <Position>4</Position>
       <DataType>DATETIME(19)|93s</DataType>
     </column>
-    <column id="292" parent="35" name="applyTime">
+    <column id="469" parent="52" name="applyTime">
       <Position>5</Position>
       <DataType>DATETIME(19)|93s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="293" parent="35" name="auditor_id">
+    <column id="470" parent="52" name="auditor_id">
       <Position>6</Position>
       <DataType>BIGINT(19)|-5s</DataType>
     </column>
-    <column id="294" parent="35" name="applier_id">
+    <column id="471" parent="52" name="applier_id">
       <Position>7</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="295" parent="35" name="PRIMARY">
+    <index id="472" parent="52" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>vi_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="296" parent="35" name="PRIMARY">
+    <key id="473" parent="52" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>vi_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="474" parent="53" name="vip_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="475" parent="53" name="user_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="476" parent="53" name="user_realname">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="477" parent="53" name="vip_date">
+      <Position>4</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="478" parent="53" name="vip_dates">
+      <Position>5</Position>
+      <DataType>DATETIME(19)|93s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="479" parent="53" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>vip_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="480" parent="53" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>vip_id</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>
