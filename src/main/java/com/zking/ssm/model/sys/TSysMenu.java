@@ -2,6 +2,8 @@ package com.zking.ssm.model.sys;
 
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 @ToString
 public class TSysMenu {
@@ -12,6 +14,7 @@ public class TSysMenu {
     private String url;
     private Integer position;
     private String icon;
+    private List<TSysMenu> sysMenu = new ArrayList<>();
 
     public Integer getMenuId() {
         return menuId;
@@ -86,5 +89,13 @@ public class TSysMenu {
     @Override
     public int hashCode() {
         return Objects.hash(menuId, menuName, menuType, parentId, url, position, icon);
+    }
+
+    public List<TSysMenu> getSysMenu() {
+        return sysMenu;
+    }
+
+    public void setSysMenu(List<TSysMenu> sysMenu) {
+        this.sysMenu = sysMenu;
     }
 }

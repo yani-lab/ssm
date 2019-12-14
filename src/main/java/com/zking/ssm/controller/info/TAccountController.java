@@ -5,4 +5,5 @@ package com.zking.ssm.controller.info;
 */
 
 public class TAccountController {
+
 }
