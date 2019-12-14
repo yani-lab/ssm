@@ -2,25 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.sys.TSysUserMapper">
 
-    <resultMap id="sysuser" type="com.zking.ssm.model.sys.TSysUser">
+    <resultMap id="userRow" type="com.zking.ssm.model.sys.TSysUser">
         <id column="user_id" property="userId" javaType="java.lang.Integer"/>
         <result column="user_name" property="userName" javaType="java.lang.String"/>
         <result column="user_pwd" property="userPwd" javaType="java.lang.String"/>
         <result column="user_realName" property="userRealName" javaType="java.lang.String"/>
-        <result column="user_email" property="userEmail" javaType="java.lang.Integer"/>
+        <result column="user_email" property="userEmail" javaType="java.lang.String"/>
         <result column="user_phone" property="userPhone" javaType="java.lang.String"/>
         <result column="user_regsitTime" property="userRegsitTime" javaType="java.util.Date"/>
-        <result column="user_fout" property="userFout" javaType="java.util.Date"/>
+        <result column="user_fOut" property="userFout" javaType="java.util.Date"/>
         <result column="user_referrer" property="userReferrer" javaType="java.lang.String"/>
         <result column="user_referrer_name" property="userReferrerName" javaType="java.lang.String"/>
-        <result column="user_payto_id" property="userPaytoId" javaType="java.lang.String"/>
-        <result column="user_card_id" property="userCardId" javaType="java.lang.String"/>
+        <result column="user_payToid" property="userPaytoId" javaType="java.lang.String"/>
+        <result column="user_cardId" property="userCardId" javaType="java.lang.String"/>
         <result column="user_head" property="userHead" javaType="java.lang.String"/>
         <result column="user_pay_pwd" property="userPayPwd" javaType="java.lang.String"/>
         <result column="salt" property="salt" javaType="java.lang.String"/>
-        <result column="locked" property="locked" javaType="java.lang.Integer"/>
+        <result column="locked" property="locked" javaType="java.lang.String"/>
     </resultMap>
-    <select id="list" resultMap="sysuser">
-         select * from t_sys_user
-    </select>
+    <insert id="RegisterUser" parameterType="com.zking.ssm.model.sys.TSysUser">
+        INSERT INTO t_book_vue (user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payToid,user_cardId,user_head,user_pay_pwd,salt,locked)
+        VALUES
+        (#{user_name}, #{user_pwd}, #{user_realName}, #{user_email}, #{user_phone}, #{user_regsitTime}, #{user_fOut}, #{user_referrer}, #{user_referrer_name}, #{user_payToid}, #{user_cardId}, #{user_head}, #{user_pay_pwd}, #{salt},#{locked})
+    </insert>
+    <select id="login" resultType="com.zking.ssm.model.sys.TSysUser"></select>
+
 </mapper>
