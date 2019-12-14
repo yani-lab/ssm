@@ -7,17 +7,27 @@ package com.zking.ssm.service.sysimpl;
 import com.zking.ssm.mapper.sys.TSysUserMapper;
 import com.zking.ssm.model.sys.TSysUser;
 import com.zking.ssm.service.sys.ISysUserService;
+import org.apache.shiro.crypto.RandomNumberGenerator;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
+
 @Service
 public class ISysUserServiceImpl implements ISysUserService {
     @Resource
     private TSysUserMapper sysUserMapper;
 
+
     @Override
-    public List<TSysUser> list() {
-        return sysUserMapper.list();
+    public void RegisterUser(TSysUser user) {
+
+        sysUserMapper.RegisterUser(user);
+    }
+
+    @Override
+    public String login(String userName) {
+        return sysUserMapper.login(userName);
     }
 }

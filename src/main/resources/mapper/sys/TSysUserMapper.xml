@@ -20,11 +20,16 @@
         <result column="salt" property="salt" javaType="java.lang.String"/>
         <result column="locked" property="locked" javaType="java.lang.String"/>
     </resultMap>
+    <sql id="row">
+        user_id,user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payToid,user_cardId,user_head,user_pay_pwd,salt,locked
+    </sql>
     <insert id="RegisterUser" parameterType="com.zking.ssm.model.sys.TSysUser">
         INSERT INTO t_book_vue (user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payToid,user_cardId,user_head,user_pay_pwd,salt,locked)
         VALUES
-        (#{user_name}, #{user_pwd}, #{user_realName}, #{user_email}, #{user_phone}, #{user_regsitTime}, #{user_fOut}, #{user_referrer}, #{user_referrer_name}, #{user_payToid}, #{user_cardId}, #{user_head}, #{user_pay_pwd}, #{salt},#{locked})
+        (#{userName}, #{userPwd}, #{userRealName}, #{userEmail}, #{userPhone}, #{userRegsitTime}, #{userFout}, #{userReferrer}, #{userReferrerName}, #{userPaytoId}, #{userCardId}, #{userHead}, #{userPayPwd}, #{salt},#{locked})
     </insert>
-    <select id="login" resultType="com.zking.ssm.model.sys.TSysUser"></select>
+    <select id="login" resultType="java.lang.String" resultMap="userRow">
+        select select <include refid="row"/> from t_sys_user t where t.user_name=#{userName}
+    </select>
 
 </mapper>
