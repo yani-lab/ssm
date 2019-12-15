@@ -1,7 +1,6 @@
 package com.zking.ssm.mapper.sys;
 
 import com.zking.ssm.model.sys.TSysUser;
-import org.apache.ibatis.annotations.Param;
 
 /**
  * @author luo
@@ -14,11 +13,19 @@ public interface TSysUserMapper {
      * @param user
      * @return
      */
-    void   RegisterUser(TSysUser user);
+    int RegisterUser(TSysUser user);
     /**
      * 通过用户名称获取用户信息
      * @param userName 用户名称
      * @return TSysUser 系统用户实体对象
      */
-    String login(@Param("userName")String userName);
+    TSysUser login(TSysUser userName);
+
+    /**
+     * 查询用户名是否已有
+     * @param user 用户名称
+     * @return TSysUser 系统用户实体对象
+     */
+    TSysUser selectCountByUserName(TSysUser user);
+
 }

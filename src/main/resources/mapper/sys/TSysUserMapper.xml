@@ -13,23 +13,27 @@
         <result column="user_fOut" property="userFout" javaType="java.util.Date"/>
         <result column="user_referrer" property="userReferrer" javaType="java.lang.String"/>
         <result column="user_referrer_name" property="userReferrerName" javaType="java.lang.String"/>
-        <result column="user_payToid" property="userPaytoId" javaType="java.lang.String"/>
-        <result column="user_cardId" property="userCardId" javaType="java.lang.String"/>
+        <result column="user_payto_id" property="userPaytoId" javaType="java.lang.String"/>
+        <result column="user_card_id" property="userCardId" javaType="java.lang.String"/>
         <result column="user_head" property="userHead" javaType="java.lang.String"/>
         <result column="user_pay_pwd" property="userPayPwd" javaType="java.lang.String"/>
         <result column="salt" property="salt" javaType="java.lang.String"/>
         <result column="locked" property="locked" javaType="java.lang.String"/>
     </resultMap>
     <sql id="row">
-        user_id,user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payToid,user_cardId,user_head,user_pay_pwd,salt,locked
+        user_id,user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payto_id,user_card_id,user_head,user_pay_pwd,salt,locked
     </sql>
-    <insert id="RegisterUser" parameterType="com.zking.ssm.model.sys.TSysUser">
-        INSERT INTO t_book_vue (user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payToid,user_cardId,user_head,user_pay_pwd,salt,locked)
+    <insert id="RegisterUser"  parameterType="com.zking.ssm.model.sys.TSysUser">
+        INSERT INTO t_sys_user (user_name,user_pwd,salt,locked)
         VALUES
-        (#{userName}, #{userPwd}, #{userRealName}, #{userEmail}, #{userPhone}, #{userRegsitTime}, #{userFout}, #{userReferrer}, #{userReferrerName}, #{userPaytoId}, #{userCardId}, #{userHead}, #{userPayPwd}, #{salt},#{locked})
+        (#{userName}, #{userPwd}, #{salt},0)
     </insert>
     <select id="login" resultType="java.lang.String" resultMap="userRow">
-        select select <include refid="row"/> from t_sys_user t where t.user_name=#{userName}
+        select  <include refid="row"/> from t_sys_user t where t.user_name=#{userName} and t.user_pwd=#{userPwd}
     </select>
+    <select id="selectCountByUserName" resultType="com.zking.ssm.model.sys.TSysUser">
+        select  <include refid="row"/> from t_sys_user t where t.user_name=#{userName}
+    </select>
+
 
 </mapper>
