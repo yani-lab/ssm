@@ -2,13 +2,10 @@ package com.zking.ssm.service.sysimpl;
 
 import com.zking.ssm.model.sys.TSysUser;
 import com.zking.ssm.service.sys.ISysUserService;
-import com.zking.ssm.util.PasswordHelper;
 import org.junit.Test;
 import test.java.com.zking.test.BaseTest;
 
 import javax.annotation.Resource;
-
-import static org.junit.Assert.*;
 
 /**
  * @author luo
@@ -40,16 +37,9 @@ public class ISysUserServiceImplTest extends BaseTest {
 //        boolean b = checkCredentials("123456", salt, credentials);
 //        System.out.println(b);
         TSysUser s=new TSysUser();
-        s.setUserName("护士");
-        String salt=PasswordHelper.createSalt();
-        String credentials = PasswordHelper.createCredentials("123",salt);
-        s.setUserPwd(credentials);
-        System.out.println(credentials);
-        System.out.println(salt);
-        boolean b=PasswordHelper.checkCredentials("123",salt,credentials);
-        System.out.println(b);
-        TSysUser d=userService.selectCountByUserName(s);
-        System.out.println(d);
+        s.setUserName("雅妮");
+        TSysUser u=userService.login("雅妮");
+        System.out.println(u.toString());
     }
 
     @Test

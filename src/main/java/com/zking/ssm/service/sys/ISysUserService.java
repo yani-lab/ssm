@@ -5,7 +5,6 @@ package com.zking.ssm.service.sys;
 */
 
 import com.zking.ssm.model.sys.TSysUser;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +20,7 @@ public interface ISysUserService {
      * @param userName 用户名称
      * @return TSysUser 系统用户实体对象
      */
-    TSysUser login(TSysUser userName);
+    TSysUser login(String userName);
 
     /**
      * 查询用户名是否已有
