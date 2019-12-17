@@ -19,7 +19,7 @@ public interface TSysUserMapper {
      * @param userName 用户名称
      * @return TSysUser 系统用户实体对象
      */
-    TSysUser login(TSysUser userName);
+    TSysUser login(String username);
 
     /**
      * 查询用户名是否已有

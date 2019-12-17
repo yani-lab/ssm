@@ -16,7 +16,6 @@ import javax.annotation.Resource;
 public class ISysUserServiceImpl implements ISysUserService {
     @Resource
     private TSysUserMapper sysUserMapper;
-//    private int us;
 
 
     @Override
@@ -39,23 +38,22 @@ public class ISysUserServiceImpl implements ISysUserService {
     }
 
     @Override
-    public TSysUser login(TSysUser user) {
+    public TSysUser login(String username) {
 
-        TSysUser us = sysUserMapper.login(user);
-        String salt = PasswordHelper.createSalt();
-        String userPwd = PasswordHelper.createCredentials(user.getUserPwd(), salt);
-//        String userName = user.getUserName();
-        user.setUserPwd(userPwd);
-        user.setSalt(salt);
-        boolean b=PasswordHelper.checkCredentials(us.getUserPwd(),salt,userPwd);
-        if(b==true){
-
-            return  us;
-        }else{
-            return null;
-        }
-
-
+//        TSysUser us = sysUserMapper.login(username);
+//        String salt = PasswordHelper.createSalt();
+//        String userPwd = PasswordHelper.createCredentials(user.getUserPwd(), salt);
+////        String userName = user.getUserName();
+//        user.setUserPwd(userPwd);
+//        user.setSalt(salt);
+//        boolean b=PasswordHelper.checkCredentials(us.getUserPwd(),salt,userPwd);
+//        if(b==true){
+//
+//            return  us;
+//        }else{
+//            return null;
+//        }
+        return sysUserMapper.login(username);
     }
 
     @Override
