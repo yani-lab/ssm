@@ -10,11 +10,5 @@ import java.util.List;
  * @creat 2019-12-1216:24
  */
 public interface TPlatformbankinfoMapper {
-    /**
-     * 新增银行卡
-     * @param platformbankinfo
-     * @return
-     */
-    int addBank(TPlatformbankinfo platformbankinfo);
-    List<TPlatformbankinfo> selectBank(TPlatformbankinfo platformbankinfo);
+
 }

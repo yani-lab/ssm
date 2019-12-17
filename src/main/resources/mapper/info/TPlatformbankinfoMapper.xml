@@ -2,22 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TPlatformbankinfoMapper">
 
-    <resultMap id="bankRow" type="com.zking.ssm.model.info.TPlatformbankinfo">
-        <id column="pf_id" property="pfId" javaType="java.lang.Integer"/>
-        <result column="bankName" property="bankName" javaType="java.lang.String"/>
-        <result column="accountName" property="accountName" javaType="java.lang.String"/>
-        <result column="accountNumber" property="accountNumber" javaType="java.lang.String"/>
-        <result column="forkName" property="forkName" javaType="java.lang.String"/>
-        <result column="iconCls" property="iconCls" javaType="java.lang.String"/>
-    </resultMap>
 
-    <insert id="addBank" parameterType="com.zking.ssm.model.info.TPlatformbankinfo">
-        insert into t_platformbankinfo (bankName, accountName, accountNumber, forkName, iconCls)
-        value (#{bankName},#{accountName},#{accountNumber},#{forkName},#{iconCls})
-    </insert>
-    <select id="selectBank" resultType="com.zking.ssm.model.info.TPlatformbankinfo">
-        select bankName,accountNumber from t_platformbankinfo
-    </select>
+
 
 
 </mapper>

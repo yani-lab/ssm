@@ -45,8 +45,8 @@ public class baseController {
         DataProtocol data=new DataProtocol();
         ImageSms vCode = new ImageSms(160,40,5,300);//优化
         String d=new Date().getTime()+".png";//优化
-        String path="C:/apache-tomcat-8.0.46/image/"+d;//优化
-        vCode.write(path);
+//        String path="C:/apache-tomcat-8.0.46/image/"+d;//优化
+//        vCode.write(path);
         Map<String,String> map=new HashMap<>();
         //String p="/static/img/"+d;
         //http://localhost:8080/image/g(1)1.jpg
