@@ -36,10 +36,11 @@ public class ISysUserServiceImplTest extends BaseTest {
 //        System.out.println(credentials.length());
 //        boolean b = checkCredentials("123456", salt, credentials);
 //        System.out.println(b);
-        TSysUser s=new TSysUser();
-        s.setUserName("雅妮");
-        TSysUser u=userService.login("雅妮");
-        System.out.println(u.toString());
+//        TSysUser s=new TSysUser();
+//        s.setUserName("雅妮");
+//        TSysUser u=userService.login("雅妮");
+//        System.out.println(u.toString());
+
     }
 
     @Test

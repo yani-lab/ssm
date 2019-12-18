@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TAccountMapper">
+    <resultMap id="accountRow" type="com.zking.ssm.model.info.TAccount">
+        <id column="ac_id" property="acId" javaType="java.lang.Integer"/>
+        <result column="user_id" property="userId" javaType="java.lang.Integer"/>
+        <result column="usableAmount" property="usableAmount" javaType="java.math.BigDecimal"/>
+        <result column="freezedAmount" property="freezedAmount" javaType="java.math.BigDecimal"/>
+        <result column="version" property="version" javaType="java.lang.Integer"/>
+        <result column="unReceiveInterest" property="unReceiveInterest" javaType="java.math.BigDecimal"/>
+        <result column="unReceivePrincipal" property="unReceivePrincipal" javaType="java.math.BigDecimal"/>
+        <result column="unReturnAmount" property="unReturnAmount" javaType="java.math.BigDecimal"/>
+        <result column="remainBorrowLimit" property="remainBorrowLimit" javaType="java.math.BigDecimal"/>
+        <result column="borrowLimit" property="borrowLimit" javaType="java.math.BigDecimal"/>
+    </resultMap>
+    <insert id="addAccount" parameterType="com.zking.ssm.model.info.TAccount">
+        insert  into  t_account (usableAmount, freezedAmount, version, unReceiveInterest, unReceivePrincipal, unReturnAmount, remainBorrowLimit, borrowLimit, user_id)
+        values (0,0,0,0,0,0,0,0,#{userId})
+    </insert>
+
+    <update id="updatecoount" parameterType="com.zking.ssm.model.info.TAccount">
+        update t_account
+        <set>
+            <if test="usableAmount != null and usableAmount != ''">
+                usableAmount = #{usableAmount},
+            </if>
+
+        </set>
+        where user_id = #{userId};
+    </update>
+    <select id="selectAccount" resultType="com.zking.ssm.model.info.TAccount" resultMap="accountRow">
+      select * from t_account where user_id=#{userId}
+    </select>
 </mapper>

@@ -1,6 +1,10 @@
 package com.zking.ssm.controller.sys;
 
+import com.zking.ssm.model.info.TAccount;
+import com.zking.ssm.model.info.TUserinfo;
 import com.zking.ssm.model.sys.TSysUser;
+import com.zking.ssm.service.info.IAccountService;
+import com.zking.ssm.service.info.IUserinfoService;
 import com.zking.ssm.service.sys.ISysUserService;
 import com.zking.ssm.util.DataProtocol;
 import org.apache.shiro.SecurityUtils;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /*
 @author yani
@@ -21,10 +26,23 @@ import javax.annotation.Resource;
 public class TSysUserController {
     @Resource
     private ISysUserService sysUserService;
+    @Resource
+    private IAccountService accountService;
+    @Resource
+    private IUserinfoService userinfoService;
     @RequestMapping("/register")
     public Object  regiestUser(TSysUser sysUser){
         DataProtocol obj = new DataProtocol();
         int u=sysUserService.RegisterUser(sysUser);
+//        TAccount a=new TAccount();
+//        a.setUserId(sysUser.getUserId());
+//        accountService.addAccount(a);
+//        TUserinfo tu=new TUserinfo();
+//        tu.setUserId(sysUser.getUserId());
+//        long millis = System.currentTimeMillis();
+//        int ii = Integer.parseInt(String.valueOf(millis));
+//        tu.setRealAuthId(ii);
+//        userinfoService.addUserinfo(tu);
        if(u>=1){
            obj.setCode(DataProtocol.SUCCESS);
            obj.setMessage("注册成功");
