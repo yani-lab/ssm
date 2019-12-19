@@ -76,5 +76,9 @@ public class PasswordHelper {
         System.out.println(credentials.length());
         boolean b = checkCredentials("123456", salt, credentials);
         System.out.println(b);
+//        BigDecimal totalAmount = new BigDecimal(1000);
+//        Integer n=200;
+//        totalAmount=totalAmount.add(new BigDecimal(n));
+//        System.out.println(totalAmount);
     }
 }

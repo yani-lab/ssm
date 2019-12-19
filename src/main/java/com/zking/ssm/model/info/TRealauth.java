@@ -20,6 +20,7 @@ public class TRealauth {
     private Date applyTime;
     private Integer auditorId;
     private Integer applierId;
+    private Integer applier_type;
 
     public Integer getRealId() {
         return realId;
@@ -157,5 +158,13 @@ public class TRealauth {
     @Override
     public int hashCode() {
         return Objects.hash(realId, realname, sex, bornDate, idNumber, address, state, image1, image2, remark, auditTime, applyTime, auditorId, applierId);
+    }
+
+    public Integer getApplier_type() {
+        return applier_type;
+    }
+
+    public void setApplier_type(Integer applier_type) {
+        this.applier_type = applier_type;
     }
 }

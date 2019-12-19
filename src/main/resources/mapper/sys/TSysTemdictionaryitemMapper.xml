@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.sys.TSysTemdictionaryitemMapper">
+    <resultMap id="TemdictionaryitemRow" type="com.zking.ssm.model.sys.TSysTemdictionaryitem">
+        <id column="sysfi_id" property="sysfiId" javaType="java.lang.Integer"/>
+        <result column="parentId" property="parentId" javaType="java.lang.Integer"/>
+        <result column="title" property="title" javaType="java.lang.String"/>
+        <result column="tvalue" property="tvalue" javaType="java.lang.String"/>
+        <result column="sequence" property="sequence" javaType="java.lang.Integer"/>
+        <result column="intro" property="intro" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="listtemd" resultMap="TemdictionaryitemRow">
+        select * from t_sys_temdictionaryitem where parentId=#{parentId}
+    </select>
 </mapper>

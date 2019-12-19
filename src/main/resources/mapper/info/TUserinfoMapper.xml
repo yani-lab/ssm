@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TUserinfoMapper">
+    <resultMap id="userinfoRow" type="com.zking.ssm.model.info.TUserinfo">
+        <id column="id" property="id" javaType="java.lang.Integer"/>
+        <result column="version" property="version" javaType="java.lang.Integer"/>
+        <result column="bitState" property="bitState" javaType="java.lang.Integer"/>
+        <result column="realName" property="realName" javaType="java.lang.String"/>
+        <result column="score" property="score" javaType="java.lang.Integer"/>
+        <result column="realAuthId" property="realAuthId" javaType="java.lang.Integer"/>
+        <result column="idNumber" property="idNumber" javaType="java.lang.String"/>
+        <result column="phoneNumber" property="phoneNumber" javaType="java.lang.String"/>
+        <result column="incomeGrade_id" property="incomeGradeId" javaType="java.lang.Integer"/>
+        <result column="marriage_id" property="marriageId" javaType="java.lang.Integer"/>
+        <result column="kidCount_id" property="kidCountId" javaType="java.lang.Integer"/>
+        <result column="educationBackground_id" property="educationBackgroundId" javaType="java.lang.Integer"/>
+        <result column="houseCondition_id" property="houseConditionId" javaType="java.lang.Integer"/>
+        <result column="email" property="email" javaType="java.lang.String"/>
+        <result column="user_id" property="userId" javaType="java.lang.Integer"/>
+    </resultMap>
+    <select id="listuserinfo" resultMap="userinfoRow">
+        select * from t_userinfo where user_id=#{userId}
+    </select>
 </mapper>
