@@ -5,19 +5,12 @@ package com.zking.ssm.service.infoimpl;
 */
 
 import com.zking.ssm.mapper.info.TAccountMapper;
-import com.zking.ssm.model.info.TAccount;
-import com.zking.ssm.mapper.info.TAccountMapper;
 import com.zking.ssm.mapper.info.TAccountflowMapper;
 import com.zking.ssm.model.info.TAccount;
 import com.zking.ssm.model.info.TAccountflow;
 import com.zking.ssm.service.info.IAccountService;
 import org.springframework.stereotype.Service;
-import com.zking.ssm.service.info.IAccountflowService;
-import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-
-@Service
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.DateFormat;
@@ -33,8 +26,6 @@ public class IAccountServiceImpl implements IAccountService {
     public TAccount listaccount(TAccount account) {
         return accountMapper.listaccount(account);
     }
-    @Resource
-    private TAccountMapper accountMapper;
     @Resource
     private TAccountflowMapper accountflowMapper;
 
