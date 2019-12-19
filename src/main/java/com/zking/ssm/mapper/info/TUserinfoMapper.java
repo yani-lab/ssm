@@ -12,4 +12,10 @@ public interface TUserinfoMapper {
      * 根据id查询用户信息
      */
     TUserinfo listuserinfo(TUserinfo userinfo);
+    /**
+     * 新增用户信息
+     * @param userinfo
+     * @return
+     */
+    int addUserinfo(TUserinfo userinfo);
 }

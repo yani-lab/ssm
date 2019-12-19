@@ -17,6 +17,7 @@ public class TAccountflow {
     private BigDecimal freezedAmount;
     private String grantpeople;
     private String allocateAmount;
+    private TAccount account;
 
     public Integer getAfId() {
         return afId;
@@ -118,5 +119,13 @@ public class TAccountflow {
     @Override
     public int hashCode() {
         return Objects.hash(afId, amount, note, tradeTime, actionType, accountId, usableAmount, freezedAmount, grantpeople, allocateAmount);
+    }
+
+    public TAccount getAccount() {
+        return account;
+    }
+
+    public void setAccount(TAccount account) {
+        this.account = account;
     }
 }
