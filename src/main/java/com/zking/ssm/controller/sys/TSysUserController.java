@@ -1,6 +1,10 @@
 package com.zking.ssm.controller.sys;
 
+import com.zking.ssm.model.info.TAccount;
+import com.zking.ssm.model.info.TUserinfo;
 import com.zking.ssm.model.sys.TSysUser;
+import com.zking.ssm.service.info.IAccountService;
+import com.zking.ssm.service.info.IUserinfoService;
 import com.zking.ssm.service.sys.ISysUserService;
 import com.zking.ssm.util.DataProtocol;
 import org.apache.shiro.SecurityUtils;
@@ -11,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 @author yani
@@ -21,6 +27,10 @@ import javax.annotation.Resource;
 public class TSysUserController {
     @Resource
     private ISysUserService sysUserService;
+    @Resource
+    private IAccountService accountService;
+    @Resource
+    private IUserinfoService userinfoService;
     @RequestMapping("/register")
     public Object  regiestUser(TSysUser sysUser){
         DataProtocol obj = new DataProtocol();
@@ -39,8 +49,19 @@ public class TSysUserController {
         Subject subject= SecurityUtils.getSubject();
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUserName(),user.getUserPwd());
         try {
+            TSysUser u=sysUserService.login(user.getUserName());
+            TAccount a=new TAccount();
+            a.setUserId(u.getUserId());
+            TUserinfo info=new TUserinfo();
+            info.setUserId(u.getUserId());
+            TUserinfo userinfo=userinfoService.listuserinfo(info);
+            TAccount account=accountService.listaccount(a);
+            Map<String,Object> map=new HashMap<>();
+            map.put("user",u);
+            map.put("userinfo",userinfo);
+            map.put("account",account);
             subject.login(token);
-            data.setData(sysUserService.login(user.getUserName()));
+            data.setData(map);
             data.setCode(DataProtocol.SUCCESS);
             data.setMessage("登录成功");
         }catch (AuthenticationException ex){
