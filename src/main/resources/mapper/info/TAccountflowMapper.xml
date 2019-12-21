@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TAccountflowMapper">
+
     <resultMap id="flowRow" type="com.zking.ssm.model.info.TAccountflow">
-        <id column="account_id" property="accountId" javaType="java.lang.Integer"/>
+        <id column="af_id" property="afId" javaType="java.lang.Integer"/>
         <result column="tradeTime" property="tradeTime" javaType="java.util.Date"/>
         <result column="usableAmount" property="usableAmount" javaType="java.math.BigDecimal"/>
+        <result column="account_id" property="accountId" javaType="java.lang.Integer"/>
+        <result column="actionType" property="actionType" javaType="java.lang.Integer"/>
+
         <association property="account" javaType="com.zking.ssm.model.info.TAccount">
             <result column="user_id" property="userId" javaType="java.lang.Integer"/>
             <result column="ac_id" property="acId" javaType="java.lang.Integer"/>
         </association>
     </resultMap>
+
     <insert id="addFlow" parameterType="com.zking.ssm.model.info.TAccountflow">
         insert into t_accountflow (amount, actionType, account_id, usableAmount,tradeTime)
         values (#{amount},#{actionType},#{accountId},#{usableAmount},#{tradeTime})
     </insert>
-    <select id="AllRecord" resultType="com.zking.ssm.model.info.TAccountflow" resultMap="flowRow">
-        SELECT t1.user_id,t2.tradeTime,t2.usableAmount FROM t_account t1 ,t_accountflow t2 WHERE t1.ac_id=t2.account_id AND user_id=#{userId}
+
+    <select id="AllRecordpaging" parameterType="com.zking.ssm.model.info.TAccountflow" resultMap="flowRow">
+        SELECT t1.user_id,t2.tradeTime,t2.usableAmount,t2.af_id,t2.actionType FROM t_account t1 inner join t_accountflow t2 on
+        t1.ac_id=t2.account_id
+        where  t1.user_id=#{userId} and t2.actionType=#{actionType}
+           <if test="afId !=null">
+             and t2.af_id like concat('%',#{afId},'%')
+           </if>
+
     </select>
+    <select id="selectFlowAccount" resultType="com.zking.ssm.model.info.TAccountflow">
+        SELECT SUM(usableAmount) usableAmount FROM t_accountflow WHERE account_id=#{accountId}
+    </select>
+
 </mapper>

@@ -1,5 +1,6 @@
 package com.zking.ssm.mapper.info;
 
+import com.zking.ssm.model.info.TAccount;
 import com.zking.ssm.model.info.TAccountflow;
 
 import java.util.List;
@@ -22,5 +23,11 @@ public interface TAccountflowMapper {
      * @param accountflow
      * @return
      */
-    List<TAccountflow> AllRecord(TAccountflow accountflow);
+    List<TAccountflow> AllRecordpaging(TAccountflow accountflow);
+    /**
+     * 查询可用余额
+     * @param account
+     * @return
+     */
+    TAccountflow selectFlowAccount(TAccountflow account);
 }

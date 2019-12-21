@@ -44,14 +44,16 @@ public class IAccountServiceImpl implements IAccountService {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        System.out.println(af.toString());
         int acountf= accountflowMapper.addFlow(af);
         int at=0;
         if(acountf>=1){
-            TAccount ta=accountMapper.selectAccount(account);
 
-            BigDecimal bd=ta.getUsableAmount().add(account.getUsableAmount());
-            account.setUsableAmount(bd);
+            af.setAccountId(account.getAcId());
+
+            TAccountflow accountflow=accountflowMapper.selectFlowAccount(af);
+
+//            BigDecimal bd=ta.getUsableAmount().add(account.getUsableAmount());
+            account.setUsableAmount(accountflow.getUsableAmount());
             at=accountMapper.updatecoount(account);
         }else{
             new RuntimeException("修改失败");
@@ -60,13 +62,15 @@ public class IAccountServiceImpl implements IAccountService {
         return  at;
     }
 
-    @Override
-    public TAccount selectAccount(TAccount account) {
-        return accountMapper.selectAccount(account);
-    }
+
 
     @Override
     public int addAccount(TAccount account) {
         return accountMapper.addAccount(account);
+    }
+
+    @Override
+    public TAccount selectAmount(TAccount account) {
+        return accountMapper.selectAmount(account);
     }
 }

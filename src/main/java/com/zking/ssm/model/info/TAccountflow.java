@@ -1,5 +1,6 @@
 package com.zking.ssm.model.info;
 
+import io.swagger.models.auth.In;
 import lombok.ToString;
 
 import java.math.BigDecimal;
@@ -18,6 +19,16 @@ public class TAccountflow {
     private String grantpeople;
     private String allocateAmount;
     private TAccount account;
+
+    private Integer userId;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
     public Integer getAfId() {
         return afId;

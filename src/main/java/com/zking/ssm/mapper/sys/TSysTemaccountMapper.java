@@ -1,9 +1,17 @@
 package com.zking.ssm.mapper.sys;
 
+import com.zking.ssm.model.sys.TSysTemaccount;
+
 /**
  * @author luo
  * @company zking
  * @creat 2019-12-1216:29
  */
 public interface TSysTemaccountMapper {
+    /**
+     * 修改系统可以余额
+     * @param sysTemaccount
+     * @return
+     */
+    int updateUsableAmount(TSysTemaccount sysTemaccount);
 }
