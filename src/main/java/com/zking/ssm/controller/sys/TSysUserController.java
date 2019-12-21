@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 @author yani
@@ -34,15 +35,6 @@ public class TSysUserController {
     public Object  regiestUser(TSysUser sysUser){
         DataProtocol obj = new DataProtocol();
         int u=sysUserService.RegisterUser(sysUser);
-//        TAccount a=new TAccount();
-//        a.setUserId(sysUser.getUserId());
-//        accountService.addAccount(a);
-//        TUserinfo tu=new TUserinfo();
-//        tu.setUserId(sysUser.getUserId());
-//        long millis = System.currentTimeMillis();
-//        int ii = Integer.parseInt(String.valueOf(millis));
-//        tu.setRealAuthId(ii);
-//        userinfoService.addUserinfo(tu);
        if(u>=1){
            obj.setCode(DataProtocol.SUCCESS);
            obj.setMessage("注册成功");
@@ -57,8 +49,19 @@ public class TSysUserController {
         Subject subject= SecurityUtils.getSubject();
         UsernamePasswordToken token=new UsernamePasswordToken(user.getUserName(),user.getUserPwd());
         try {
+            TSysUser u=sysUserService.login(user.getUserName());
+            TAccount a=new TAccount();
+            a.setUserId(u.getUserId());
+            TUserinfo info=new TUserinfo();
+            info.setUserId(u.getUserId());
+            TUserinfo userinfo=userinfoService.listuserinfo(info);
+            TAccount account=accountService.listaccount(a);
+            Map<String,Object> map=new HashMap<>();
+            map.put("user",u);
+            map.put("userinfo",userinfo);
+            map.put("account",account);
             subject.login(token);
-            data.setData(sysUserService.login(user.getUserName()));
+            data.setData(map);
             data.setCode(DataProtocol.SUCCESS);
             data.setMessage("登录成功");
         }catch (AuthenticationException ex){

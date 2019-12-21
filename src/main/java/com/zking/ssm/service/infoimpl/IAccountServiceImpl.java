@@ -9,7 +9,6 @@ import com.zking.ssm.mapper.info.TAccountflowMapper;
 import com.zking.ssm.model.info.TAccount;
 import com.zking.ssm.model.info.TAccountflow;
 import com.zking.ssm.service.info.IAccountService;
-import com.zking.ssm.service.info.IAccountflowService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,6 +22,10 @@ import java.util.Date;
 public class IAccountServiceImpl implements IAccountService {
     @Resource
     private TAccountMapper accountMapper;
+    @Override
+    public TAccount listaccount(TAccount account) {
+        return accountMapper.listaccount(account);
+    }
     @Resource
     private TAccountflowMapper accountflowMapper;
 

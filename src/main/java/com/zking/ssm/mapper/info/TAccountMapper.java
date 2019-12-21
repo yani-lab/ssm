@@ -9,6 +9,10 @@ import com.zking.ssm.model.info.TAccount;
  */
 public interface TAccountMapper {
     /**
+     * 通过用户id查询
+     */
+    TAccount listaccount(TAccount account);
+    /**
      * 修改充值金额
      * @param account
      * @return

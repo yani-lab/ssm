@@ -16,6 +16,10 @@ public class IUserinfoServiceImpl implements IUserinfoService {
     @Resource
     private TUserinfoMapper userinfoMapper;
     @Override
+    public TUserinfo listuserinfo(TUserinfo userinfo) {
+        return userinfoMapper.listuserinfo(userinfo);
+    }
+    @Override
     public int addUserinfo(TUserinfo userinfo) {
         return userinfoMapper.addUserinfo(userinfo);
     }

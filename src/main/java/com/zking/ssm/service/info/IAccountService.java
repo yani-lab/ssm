@@ -5,10 +5,16 @@ package com.zking.ssm.service.info;
 */
 
 import com.zking.ssm.model.info.TAccount;
+
+import com.zking.ssm.model.info.TAccount;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface IAccountService {
+    /**
+     * 通过用户id查询
+     */
+    TAccount listaccount(TAccount account);
     /**
      * 修改充值金额
      * @param account
