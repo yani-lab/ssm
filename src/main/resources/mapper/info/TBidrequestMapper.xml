@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TBidrequestMapper">
+    <resultMap id="bidRow" type="com.zking.ssm.model.info.TBidrequest">
+        <id column="bid_id" property="bidId" javaType="java.lang.Integer"/>
+        <result column="version" property="version" javaType="java.lang.Integer"/>
+        <result column="returnType" property="returnType" javaType="java.lang.Integer"/>
+        <result column="bidRequestType" property="bidRequestType" javaType="java.lang.Integer"/>
+        <result column="bidRequestState" property="bidRequestState" javaType="java.lang.Integer"/>
+        <result column="bidRequestAmount" property="bidRequestAmount" javaType="java.math.BigDecimal"/>
+        <result column="currentRate" property="currentRate" javaType="java.math.BigDecimal"/>
+        <result column="monthesReturn" property="monthesReturn" javaType="java.lang.Integer"/>
+        <result column="bidCount" property="bidCount" javaType="java.lang.Integer"/>
+        <result column="totalRewardAmount" property="totalRewardAmount" javaType="java.math.BigDecimal"/>
+        <result column="currentSum" property="currentSum" javaType="java.math.BigDecimal"/>
+        <result column="title" property="title" javaType="java.lang.String"/>
+        <result column="description" property="description" javaType="java.lang.String"/>
+        <result column="note" property="note" javaType="java.lang.String"/>
+        <result column="disableDate" property="disableDate" javaType="java.util.Date"/>
+        <result column="createuser_id" property="createuserId" javaType="java.lang.Integer"/>
+        <result column="disableDays" property="disableDays" javaType="java.lang.Integer"/>
+        <result column="minBidAmount" property="minBidAmount" javaType="java.math.BigDecimal"/>
+        <result column="applyTime" property="applyTime" javaType="java.util.Date"/>
+        <result column="publishTime" property="publishTime" javaType="java.util.Date"/>
+    </resultMap>
+    <select id="sellctBidRequest" resultMap="bidRow">
+      select * from t_bidrequest where createuser_id=#{createuserId}
+    </select>
 </mapper>

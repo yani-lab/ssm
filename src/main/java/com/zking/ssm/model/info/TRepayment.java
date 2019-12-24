@@ -2,6 +2,7 @@ package com.zking.ssm.model.info;
 
 import lombok.ToString;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 @ToString
@@ -19,6 +20,9 @@ public class TRepayment {
     private Date refuTime;
     private Date realityTime;
     private String realityType;
+    private BigDecimal usableAmount;
+    private Integer accountId;
+
 
     public Integer getRepId() {
         return repId;
@@ -147,5 +151,21 @@ public class TRepayment {
     @Override
     public int hashCode() {
         return Objects.hash(repId, userId, bidId, loId, fenType, capital, interest, refuMoney, repayType, realityMoney, refuTime, realityTime, realityType);
+    }
+
+    public BigDecimal getUsableAmount() {
+        return usableAmount;
+    }
+
+    public void setUsableAmount(BigDecimal usableAmount) {
+        this.usableAmount = usableAmount;
+    }
+
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 }

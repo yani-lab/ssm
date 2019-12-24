@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TRepaymentMapper">
+    <update id="updateRepayment">
+        update t_repayment
+        <set>
+            <if test="repayType!=null and repayType != ''">
+                repayType=#{repayType}
+            </if>
+        </set>
+        where rep_id=#{rep_id}
+    </update>
+    <select id="selectRepayment" resultType="com.zking.ssm.model.info.TRepayment">
+        select * from t_repayment where bid_id=#{bidId}
+    </select>
 </mapper>

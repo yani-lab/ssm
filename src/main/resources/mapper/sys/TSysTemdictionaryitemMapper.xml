@@ -12,4 +12,7 @@
     <select id="listtemd" resultMap="TemdictionaryitemRow">
         select * from t_sys_temdictionaryitem where parentId=#{parentId}
     </select>
+    <select id="selectTitle" resultMap="TemdictionaryitemRow">
+        select title from t_sys_temdictionaryitem where sysfi_id=#{sysfiId}
+    </select>
 </mapper>

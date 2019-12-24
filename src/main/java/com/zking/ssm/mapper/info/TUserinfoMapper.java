@@ -18,4 +18,11 @@ public interface TUserinfoMapper {
      * @return
      */
     int addUserinfo(TUserinfo userinfo);
+
+    /**
+     *修改实名认证
+     * @param userinfo
+     * @return
+     */
+    int updateRealauthId(TUserinfo userinfo);
 }

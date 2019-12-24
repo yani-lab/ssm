@@ -50,7 +50,6 @@ public class IMoneywithdrawServiceImpl implements IMoneywithdrawService {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         int m = moneywithdrawMapper.addDrawMoney(money);
 
         if (m >= 1) {

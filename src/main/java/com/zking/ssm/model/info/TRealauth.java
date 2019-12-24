@@ -22,6 +22,7 @@ public class TRealauth {
     private Integer applierId;
     private Integer applier_type;
 
+
     public Integer getRealId() {
         return realId;
     }
@@ -167,4 +168,6 @@ public class TRealauth {
     public void setApplier_type(Integer applier_type) {
         this.applier_type = applier_type;
     }
+
+
 }

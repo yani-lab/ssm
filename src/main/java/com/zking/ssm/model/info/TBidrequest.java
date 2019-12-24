@@ -27,6 +27,8 @@ public class TBidrequest {
     private BigDecimal minBidAmount;
     private Date applyTime;
     private Date publishTime;
+    private String stateName;
+
 
     public Integer getBidId() {
         return bidId;
@@ -218,5 +220,13 @@ public class TBidrequest {
     @Override
     public int hashCode() {
         return Objects.hash(bidId, version, returnType, bidRequestType, bidRequestState, bidRequestAmount, currentRate, monthesReturn, bidCount, totalRewardAmount, currentSum, title, description, note, disableDate, createuserId, disableDays, minBidAmount, applyTime, publishTime);
+    }
+
+    public String getStateName() {
+        return stateName;
+    }
+
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
     }
 }

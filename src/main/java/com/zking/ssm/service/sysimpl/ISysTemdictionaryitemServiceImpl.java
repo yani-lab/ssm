@@ -5,6 +5,7 @@ package com.zking.ssm.service.sysimpl;
 */
 
 import com.zking.ssm.mapper.sys.TSysTemdictionaryitemMapper;
+import com.zking.ssm.model.sys.TSysTemdictionary;
 import com.zking.ssm.model.sys.TSysTemdictionaryitem;
 import com.zking.ssm.service.sys.ISysTemdictionaryitemService;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,10 @@ public class ISysTemdictionaryitemServiceImpl implements ISysTemdictionaryitemSe
     @Override
     public List<TSysTemdictionaryitem> listtemd(TSysTemdictionaryitem sysTemdictionaryitem) {
         return sysTemdictionaryitemMapper.listtemd(sysTemdictionaryitem);
+    }
+
+    @Override
+    public TSysTemdictionaryitem selectTitle(TSysTemdictionaryitem temdictionary) {
+        return sysTemdictionaryitemMapper.selectTitle(temdictionary);
     }
 }

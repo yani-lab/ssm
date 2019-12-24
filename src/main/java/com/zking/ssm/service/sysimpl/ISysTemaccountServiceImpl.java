@@ -19,4 +19,9 @@ public class ISysTemaccountServiceImpl implements ISysTemaccountService {
     public int updateUsableAmount(TSysTemaccount sysTemaccount) {
         return sysTemaccountMapper.updateUsableAmount(sysTemaccount);
     }
+
+    @Override
+    public TSysTemaccount selectUsableAmount(TSysTemaccount sysTemaccount) {
+        return sysTemaccountMapper.selectUsableAmount(sysTemaccount);
+    }
 }

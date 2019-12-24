@@ -14,4 +14,11 @@ public interface TSysTemaccountMapper {
      * @return
      */
     int updateUsableAmount(TSysTemaccount sysTemaccount);
+
+    /**
+     * 查询系统账户可用余额
+     * @param sysTemaccount
+     * @return
+     */
+    TSysTemaccount selectUsableAmount(TSysTemaccount sysTemaccount);
 }
