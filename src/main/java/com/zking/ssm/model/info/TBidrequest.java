@@ -30,6 +30,23 @@ public class TBidrequest {
     private String stateName;
 
 
+
+    private TProducttable tProducttable;
+
+    public TProducttable gettProducttable() {
+        return tProducttable;
+    }
+
+    public void settProducttable(TProducttable tProducttable) {
+        this.tProducttable = tProducttable;
+    }
+
+
+
+
+
+
+
     public Integer getBidId() {
         return bidId;
     }
@@ -229,4 +246,6 @@ public class TBidrequest {
     public void setStateName(String stateName) {
         this.stateName = stateName;
     }
+
+
 }

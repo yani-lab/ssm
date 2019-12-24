@@ -9,7 +9,6 @@ import com.zking.ssm.util.PageBean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
 public interface IBidrequestService {
     /**
      * 查询所有借款项目
@@ -17,4 +16,25 @@ public interface IBidrequestService {
      * @return
      */
     List<TBidrequest> sellctBidRequest(TBidrequest bidrequest, PageBean pageBean);
+
+    /**
+     * 查询借款
+     * @param tBidrequest
+     * @return
+     */
+    List<TBidrequest> listTBidrequest(TBidrequest tBidrequest);
+
+
+    List<TBidrequest> listTBidrequestPage(TBidrequest tBidrequest, PageBean pageBean);
+
+
+    /**
+     * 获取所有的产品类型
+     * @param bidrequesttype
+     * @return
+     */
+    List<TBidrequest> getbidRequestTypeAll(TBidrequest bidrequesttype);
+
+
+
 }

@@ -16,4 +16,40 @@ public interface TBidrequestMapper {
      * @return
      */
     List<TBidrequest> sellctBidRequest(TBidrequest bidrequest);
+    /**
+     * 借款
+     * @param tBidrequest
+     * @return
+     */
+    List<TBidrequest> listTBidrequest(TBidrequest tBidrequest);
+
+
+
+
+    List<TBidrequest> listTBidrequestPage(TBidrequest tBidrequest);
+
+
+    /**
+     * 获取所有的产品类型
+     *
+     */
+   List<TBidrequest> getbidRequestTypeAll(TBidrequest bidrequesttype);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

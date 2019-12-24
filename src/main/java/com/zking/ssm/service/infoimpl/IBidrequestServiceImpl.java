@@ -11,6 +11,8 @@ import com.zking.ssm.mapper.sys.TSysTemdictionaryitemMapper;
 import com.zking.ssm.model.info.TAccountflow;
 import com.zking.ssm.model.info.TBidrequest;
 import com.zking.ssm.model.sys.TSysTemdictionaryitem;
+import com.zking.ssm.mapper.info.TBidrequestMapper;
+import com.zking.ssm.model.info.TBidrequest;
 import com.zking.ssm.service.info.IBidrequestService;
 import com.zking.ssm.util.PageBean;
 import org.springframework.stereotype.Service;
@@ -33,5 +35,23 @@ public class IBidrequestServiceImpl implements IBidrequestService {
             pageBean.setTotal(Long.valueOf(pageInfo.getTotal()).intValue());
         }
         return list;
+    }
+
+   @Resource
+   private TBidrequestMapper tBidrequestMapper;
+
+    @Override
+    public List<TBidrequest> listTBidrequest(TBidrequest tBidrequest) {
+        return tBidrequestMapper.listTBidrequest(tBidrequest);
+    }
+
+    @Override
+    public List<TBidrequest> listTBidrequestPage(TBidrequest tBidrequest, PageBean pageBean) {
+        return tBidrequestMapper.listTBidrequestPage(tBidrequest);
+    }
+
+    @Override
+    public List<TBidrequest> getbidRequestTypeAll(TBidrequest bidrequesttype) {
+        return tBidrequestMapper.getbidRequestTypeAll(bidrequesttype);
     }
 }
