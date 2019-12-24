@@ -4,12 +4,14 @@ package com.zking.ssm.service.sysimpl;
 @create 2019-12-1216:42
 */
 
+import com.zking.ssm.mapper.sys.TSysTemaccountflowMapper;
+import com.zking.ssm.model.sys.TSysTemaccountflow;
 import com.zking.ssm.service.sys.ISysTemaccountflowService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-@Service
-import javax.annotation.Resource;
+
 
 @Service
 public class ISysTemaccountflowServiceImpl implements ISysTemaccountflowService {

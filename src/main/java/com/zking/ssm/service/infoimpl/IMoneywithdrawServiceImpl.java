@@ -81,12 +81,11 @@ public class IMoneywithdrawServiceImpl implements IMoneywithdrawService {
             tf.setActionType(1);
             tf.setAmount(money.getAmount());
             tf.setUsableAmount(money.getAmount());
-            tf.setTradeTime(d);
+            tf.setTradeTime(time);
             sysTemaccountflowMapper.addAccountFlow(tf);
         }
         return m;
     }
-
     @Override
     public TMoneywithdraw selectDrawMoney(TMoneywithdraw moneywithdraw) {
         return moneywithdrawMapper.selectDrawMoney(moneywithdraw);

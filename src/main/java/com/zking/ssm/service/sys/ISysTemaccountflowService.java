@@ -8,7 +8,6 @@ import com.zking.ssm.model.sys.TSysTemaccountflow;
 
 import java.util.List;
 
-@Service
 public interface ISysTemaccountflowService {
     /**
      * 查询所有账户流水
