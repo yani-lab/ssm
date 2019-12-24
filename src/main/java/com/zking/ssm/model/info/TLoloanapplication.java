@@ -2,7 +2,6 @@ package com.zking.ssm.model.info;
 
 import lombok.ToString;
 
-import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TLoloanapplication {
@@ -16,7 +15,7 @@ public class TLoloanapplication {
     private String installmentstate;
     private String applicationstatus;
     private Integer handlerid;
-    private Date applicationtime;
+    private String applicationtime;
     private String reason;
 
     public Integer getLoloId() {
@@ -99,11 +98,11 @@ public class TLoloanapplication {
         this.handlerid = handlerid;
     }
 
-    public Date getApplicationtime() {
+    public String getApplicationtime() {
         return applicationtime;
     }
 
-    public void setApplicationtime(Date applicationtime) {
+    public void setApplicationtime(String applicationtime) {
         this.applicationtime = applicationtime;
     }
 

@@ -8,6 +8,7 @@ public class TSysUserRole {
     private Integer urId;
     private Integer userId;
     private Integer roleId;
+    private String userName;
 
     public Integer getUrId() {
         return urId;
@@ -46,5 +47,13 @@ public class TSysUserRole {
     @Override
     public int hashCode() {
         return Objects.hash(urId, userId, roleId);
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

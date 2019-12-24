@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TLoloanapplicationMapper">
+    <resultMap id="loloanapplicationRow" type="com.zking.ssm.model.info.TLoloanapplication">
+        <id column="lolo_id" property="loloId" javaType="java.lang.Integer"/>
+        <result column="userid" property="userid" javaType="java.lang.Integer"/>
+        <result column="appliedamount" property="appliedamount" javaType="java.lang.String"/>
+        <result column="bankcard" property="bankcard" javaType="java.lang.String"/>
+        <result column="houselicense" property="houselicense" javaType="java.lang.String"/>
+        <result column="drivinglicense" property="drivinglicense" javaType="java.lang.String"/>
+        <result column="bidtype" property="bidtype" javaType="java.lang.String"/>
+        <result column="applicationtime" property="applicationtime" javaType="java.util.Date"/>
+        <result column="installmentstate" property="installmentstate" javaType="java.lang.String"/>
+        <result column="applicationstatus" property="applicationstatus" javaType="java.lang.String"/>
+        <result column="handlerid" property="handlerid" javaType="java.lang.Integer"/>
+        <result column="reason" property="reason" javaType="java.lang.String"/>
+    </resultMap>
+    <insert id="addlolan" parameterType="com.zking.ssm.model.info.TLoloanapplication">
+        INSERT INTO t_loloanapplication( userid, appliedamount,bidtype, installmentstate, applicationstatus, applicationtime, reason)
+        VALUES
+        (#{userid}, #{appliedamount}, #{bidtype}, #{installmentstate}, #{applicationstatus}, #{applicationtime}, #{reason});
+    </insert>
 </mapper>

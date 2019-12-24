@@ -28,6 +28,10 @@ public interface ISysUserService {
      * @return TSysUser 系统用户实体对象
      */
     TSysUser selectCountByUserName(TSysUser user);
+    /**
+     * 通过id查询
+     */
+    TSysUser getById(TSysUser sysUser);
 
 
 }

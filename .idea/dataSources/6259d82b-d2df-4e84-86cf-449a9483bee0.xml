@@ -64,6 +64,7 @@
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="55" parent="12" name="usableAmount">
       <Position>2</Position>
@@ -822,20 +823,14 @@
     <column id="199" parent="26" name="bankcard">
       <Position>4</Position>
       <DataType>VARCHAR(50)|12s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
     <column id="200" parent="26" name="houselicense">
       <Position>5</Position>
       <DataType>VARCHAR(50)|12s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
     <column id="201" parent="26" name="drivinglicense">
       <Position>6</Position>
       <DataType>VARCHAR(50)|12s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
     <column id="202" parent="26" name="bidtype">
       <Position>7</Position>
@@ -858,7 +853,6 @@
     <column id="205" parent="26" name="handlerid">
       <Position>10</Position>
       <DataType>INT(10)|4s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="206" parent="26" name="applicationtime">
       <Position>11</Position>
@@ -1275,13 +1269,13 @@
     </column>
     <column id="291" parent="34" name="time">
       <Position>5</Position>
-      <DataType>DATETIME(19)|93s</DataType>
+      <DataType>VARCHAR(100)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
     <column id="292" parent="34" name="require">
       <Position>6</Position>
-      <DataType>DATETIME(19)|93s</DataType>
+      <DataType>VARCHAR(100)|12s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
@@ -1567,7 +1561,6 @@
     <column id="347" parent="38" name="position">
       <Position>6</Position>
       <DataType>INT(10)|4s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="348" parent="38" name="icon">
       <Position>7</Position>
@@ -2081,6 +2074,7 @@
       <Position>1</Position>
       <DataType>BIGINT(19)|-5s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="449" parent="51" name="version">
       <Position>2</Position>

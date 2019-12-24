@@ -11,6 +11,7 @@ public class TSysTemdictionaryitem {
     private String tvalue;
     private Integer sequence;
     private String intro;
+    private String parentName;
 
     public Integer getSysfiId() {
         return sysfiId;
@@ -76,5 +77,13 @@ public class TSysTemdictionaryitem {
     @Override
     public int hashCode() {
         return Objects.hash(sysfiId, parentId, title, tvalue, sequence, intro);
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
     }
 }

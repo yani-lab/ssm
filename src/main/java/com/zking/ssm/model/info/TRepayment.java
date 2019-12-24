@@ -2,7 +2,6 @@ package com.zking.ssm.model.info;
 
 import lombok.ToString;
 
-import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TRepayment {
@@ -16,9 +15,10 @@ public class TRepayment {
     private String refuMoney;
     private String repayType;
     private String realityMoney;
-    private Date refuTime;
-    private Date realityTime;
+    private String refuTime;
+    private String realityTime;
     private String realityType;
+    private String userName;
 
     public Integer getRepId() {
         return repId;
@@ -100,19 +100,19 @@ public class TRepayment {
         this.realityMoney = realityMoney;
     }
 
-    public Date getRefuTime() {
+    public String getRefuTime() {
         return refuTime;
     }
 
-    public void setRefuTime(Date refuTime) {
+    public void setRefuTime(String refuTime) {
         this.refuTime = refuTime;
     }
 
-    public Date getRealityTime() {
+    public String getRealityTime() {
         return realityTime;
     }
 
-    public void setRealityTime(Date realityTime) {
+    public void setRealityTime(String realityTime) {
         this.realityTime = realityTime;
     }
 
@@ -147,5 +147,13 @@ public class TRepayment {
     @Override
     public int hashCode() {
         return Objects.hash(repId, userId, bidId, loId, fenType, capital, interest, refuMoney, repayType, realityMoney, refuTime, realityTime, realityType);
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

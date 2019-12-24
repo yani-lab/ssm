@@ -22,6 +22,7 @@ public class TSysUser {
     private String userPayPwd;
     private String salt;
     private Integer locked;
+    private Integer role;
 
     public Integer getUserId() {
         return userId;
@@ -177,5 +178,13 @@ public class TSysUser {
     @Override
     public int hashCode() {
         return Objects.hash(userId, userName, userPwd, userRealName, userEmail, userPhone, userRegsitTime, userFout, userReferrer, userReferrerName, userPaytoId, userCardId, userHead, userPayPwd, salt, locked);
+    }
+
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
     }
 }

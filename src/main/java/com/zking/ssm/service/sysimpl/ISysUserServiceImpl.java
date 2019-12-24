@@ -62,5 +62,10 @@ public class ISysUserServiceImpl implements ISysUserService {
         return sysUserMapper.selectCountByUserName(user);
     }
 
+    @Override
+    public TSysUser getById(TSysUser sysUser) {
+        return sysUserMapper.getById(sysUser);
+    }
+
 
 }

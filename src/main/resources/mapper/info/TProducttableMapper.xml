@@ -6,12 +6,48 @@
         <result column="pro_name" property="proName" javaType="java.lang.String"/>
         <result column="money" property="money" javaType="java.lang.String"/>
         <result column="interest" property="interest" javaType="java.lang.String"/>
-        <result column="time" property="time" javaType="java.util.Date"/>
-        <result column="require" property="require" javaType="java.util.Date"/>
+        <result column="time" property="time" javaType="java.lang.String"/>
+        <result column="require" property="require" javaType="java.lang.String"/>
         <result column="scope" property="scope" javaType="java.lang.String"/>
         <result column="lineofcredit" property="lineofcredit" javaType="java.lang.String"/>
     </resultMap>
+    <insert id="addpro" parameterType="com.zking.ssm.model.info.TProducttable">
+        INSERT INTO t_producttable (`pro_name`, `money`, `interest`, `time`, `require`, `scope`, `lineofcredit`)
+        VALUES(#{proName}, #{money}, #{interest}, #{time}, #{require}, #{scope}, #{lineofcredit})
+    </insert>
+    <update id="updatepro" parameterType="com.zking.ssm.model.info.TProducttable">
+        UPDATE t_producttable
+        <set>
+            <if test=" proName != null and proName!= '' ">
+                `pro_name`=#{proName},
+            </if>
+            <if test=" money != null and money != '' ">
+                `money`=#{money},
+            </if>
+            <if test=" interest != null and interest!=''">
+                `interest`=#{interest},
+            </if>
+            <if test=" scope != null and scope != ''">
+                `scope`=#{scope},
+            </if>
+            <if test=" lineofcredit != null and lineofcredit != ''">
+                `lineofcredit`=#{lineofcredit}
+            </if>
+        </set>
+        WHERE (`pro_id`=#{proId});
+    </update>
+    <delete id="delpro" parameterType="com.zking.ssm.model.info.TProducttable">
+        delete from t_producttable where pro_id=#{proId};
+    </delete>
     <select id="listprod" resultMap="prodrow">
          select  * from t_producttable
+    </select>
+    <select id="listprodname" resultMap="prodrow">
+        select * from t_producttable
+        <where>
+            <if test="proName != null and proName != ''" >
+                and pro_name like concat('%',#{proName},'%')
+            </if>
+        </where>
     </select>
 </mapper>

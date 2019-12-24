@@ -9,7 +9,37 @@
         <result column="sequence" property="sequence" javaType="java.lang.Integer"/>
         <result column="intro" property="intro" javaType="java.lang.String"/>
     </resultMap>
+    <insert id="addtemdict" parameterType="com.zking.ssm.model.sys.TSysTemdictionaryitem">
+        INSERT INTO t_sys_temdictionaryitem (`parentId`, `title`, `sequence`, `intro`)
+        VALUES(#{parentId}, #{title}, 1, #{intro})
+    </insert>
+    <update id="updatetemdict" parameterType="com.zking.ssm.model.sys.TSysTemdictionaryitem">
+        UPDATE t_sys_temdictionaryitem
+        <set>
+            <if test=" title != null and title!= '' ">
+                `title`=#{title},
+            </if>
+            <if test=" intro != null and intro!=''">
+                `intro`=#{intro},
+            </if>
+            <if test=" parentId != null and parentId != ''">
+                `parentId`=#{parentId},
+            </if>
+        </set>
+        WHERE (`sysfi_id`=#{sysfiId});
+    </update>
+    <delete id="deltemdict" parameterType="com.zking.ssm.model.sys.TSysTemdictionaryitem">
+        delete from t_sys_temdictionaryitem where sysfi_id=#{sysfiId};
+    </delete>
     <select id="listtemd" resultMap="TemdictionaryitemRow">
         select * from t_sys_temdictionaryitem where parentId=#{parentId}
+    </select>
+    <select id="listtemdict" resultMap="TemdictionaryitemRow">
+        select * from t_sys_temdictionaryitem
+        <where>
+            <if test="title != null and title != ''" >
+                and title like concat('%',#{title},'%')
+            </if>
+        </where>
     </select>
 </mapper>

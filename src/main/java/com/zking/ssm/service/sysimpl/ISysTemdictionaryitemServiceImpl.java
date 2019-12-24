@@ -19,4 +19,24 @@ public class ISysTemdictionaryitemServiceImpl implements ISysTemdictionaryitemSe
     public List<TSysTemdictionaryitem> listtemd(TSysTemdictionaryitem sysTemdictionaryitem) {
         return sysTemdictionaryitemMapper.listtemd(sysTemdictionaryitem);
     }
+
+    @Override
+    public List<TSysTemdictionaryitem> listtemdict(TSysTemdictionaryitem sysTemdictionaryitem) {
+        return sysTemdictionaryitemMapper.listtemdict(sysTemdictionaryitem);
+    }
+
+    @Override
+    public int addtemdict(TSysTemdictionaryitem sysTemdictionaryitem) {
+        return sysTemdictionaryitemMapper.addtemdict(sysTemdictionaryitem);
+    }
+
+    @Override
+    public int updatetemdict(TSysTemdictionaryitem sysTemdictionaryitem) {
+        return sysTemdictionaryitemMapper.updatetemdict(sysTemdictionaryitem);
+    }
+
+    @Override
+    public int deltemdict(TSysTemdictionaryitem sysTemdictionaryitem) {
+        return sysTemdictionaryitemMapper.deltemdict(sysTemdictionaryitem);
+    }
 }

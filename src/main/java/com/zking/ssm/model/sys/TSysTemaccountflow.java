@@ -3,12 +3,11 @@ package com.zking.ssm.model.sys;
 import lombok.ToString;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TSysTemaccountflow {
     private Integer sysfId;
-    private Date tradeTime;
+    private String tradeTime;
     private Integer actionType;
     private BigDecimal amount;
     private BigDecimal usableAmount;
@@ -23,11 +22,11 @@ public class TSysTemaccountflow {
         this.sysfId = sysfId;
     }
 
-    public Date getTradeTime() {
+    public String getTradeTime() {
         return tradeTime;
     }
 
-    public void setTradeTime(Date tradeTime) {
+    public void setTradeTime(String tradeTime) {
         this.tradeTime = tradeTime;
     }
 

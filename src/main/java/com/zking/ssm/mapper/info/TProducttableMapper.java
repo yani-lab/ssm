@@ -14,4 +14,20 @@ public interface TProducttableMapper {
      * 查询所有产品
      */
     List<TProducttable> listprod();
+    /**
+     * 通过产品名称模糊查询产品
+     */
+    List<TProducttable> listprodname(TProducttable producttable);
+    /**
+     * 新增产品
+     */
+    int addpro(TProducttable producttable);
+    /**
+     * 修改产品
+     */
+    int updatepro(TProducttable producttable);
+    /**
+     * 删除产品
+     */
+    int delpro(TProducttable producttable);
 }

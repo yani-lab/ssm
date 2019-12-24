@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.sys.TSysTemaccountflowMapper">
+    <resultMap id="accountRow" type="com.zking.ssm.model.sys.TSysTemaccountflow">
+        <id column="sysf_id" property="sysfId" javaType="java.lang.Integer"/>
+        <result column="tradeTime" property="tradeTime" javaType="java.lang.String"/>
+        <result column="actionType" property="actionType" javaType="java.lang.Integer"/>
+        <result column="amount" property="amount" javaType="java.math.BigDecimal"/>
+        <result column="usableAmount" property="usableAmount" javaType="java.math.BigDecimal"/>
+        <result column="freezedAmount" property="freezedAmount" javaType="java.math.BigDecimal"/>
+        <result column="note" property="note" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="listflow" resultMap="accountRow">
+        select * from t_sys_temaccountflow
+        <where>
+            <if test="sysfId != null and sysfId != ''" >
+                and sysf_id like concat('%',#{sysfId},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

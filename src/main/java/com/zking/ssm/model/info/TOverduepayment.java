@@ -9,6 +9,7 @@ public class TOverduepayment {
     private Integer overdueId;
     private Integer days;
     private Integer typeId;
+    private String typeName;
     private Integer handlerId;
     private String handlerName;
     private String mode;
@@ -106,5 +107,13 @@ public class TOverduepayment {
     @Override
     public int hashCode() {
         return Objects.hash(ovdId, overdueId, days, typeId, handlerId, handlerName, mode, result, remark);
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 }

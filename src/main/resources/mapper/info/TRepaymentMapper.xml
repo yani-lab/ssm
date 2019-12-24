@@ -1,4 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TRepaymentMapper">
+    <resultMap id="reprow" type="com.zking.ssm.model.info.TRepayment">
+        <id column="rep_id" property="repId" javaType="java.lang.Integer"/>
+        <result column="user_id" property="userId" javaType="java.lang.Integer"/>
+        <result column="bid_id" property="bidId" javaType="java.lang.Integer"/>
+        <result column="lo_id" property="loId" javaType="java.lang.Integer"/>
+        <result column="fen_type" property="fenType" javaType="java.lang.String"/>
+        <result column="capital" property="capital" javaType="java.lang.String"/>
+        <result column="interest" property="interest" javaType="java.lang.String"/>
+        <result column="refu_money" property="refuMoney" javaType="java.lang.String"/>
+        <result column="repayType" property="repayType" javaType="java.lang.String"/>
+        <result column="reality_money" property="realityMoney" javaType="java.lang.String"/>
+        <result column="refu_time" property="refuTime" javaType="java.lang.String"/>
+        <result column="reality_time" property="realityTime" javaType="java.lang.String"/>
+        <result column="reality_type" property="realityType" javaType="java.lang.String"/>
+    </resultMap>
+    <update id="updaterep" parameterType="com.zking.ssm.model.info.TRepayment">
+        UPDATE t_repayment
+        <set>
+            <if test=" repayType != null and repayType!= '' ">
+                `repayType`=#{repayType}
+            </if>
+        </set>
+        WHERE (`rep_id`=#{repId});
+    </update>
+    <select id="listrep" resultMap="reprow">
+        select  * from t_repayment
+        <where>
+            <if test="repId!=null and repId!=''">
+                and rep_id like concat('%',#{repId},'%')
+            </if>
+            and repayType=#{repayType}
+        </where>
+    </select>
+    <select id="list" resultMap="reprow">
+        select * from t_repayment where repayType=1;
+    </select>
+    <select id="getByLoId" resultMap="reprow">
+        select * from t_repayment where lo_id=#{loId};
+    </select>
 </mapper>

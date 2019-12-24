@@ -2,7 +2,6 @@ package com.zking.ssm.model.info;
 
 import lombok.ToString;
 
-import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TProducttable {
@@ -10,8 +9,8 @@ public class TProducttable {
     private String proName;
     private String money;
     private String interest;
-    private Date time;
-    private Date require;
+    private String time;
+    private String require;
     private String scope;
     private String lineofcredit;
 
@@ -47,19 +46,19 @@ public class TProducttable {
         this.interest = interest;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Date getRequire() {
+    public String getRequire() {
         return require;
     }
 
-    public void setRequire(Date require) {
+    public void setRequire(String require) {
         this.require = require;
     }
 

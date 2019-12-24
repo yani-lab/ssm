@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TOverduetypeMapper">
+    <resultMap id="overtypeRow" type="com.zking.ssm.model.info.TOverduetype">
+        <id column="ovt_id" property="ovtId" javaType="java.lang.Integer"/>
+        <result column="range" property="range" javaType="java.lang.String"/>
+        <result column="rateofinterest" property="rateofinterest" javaType="java.lang.String"/>
+        <result column="status" property="status" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="getById" resultMap="overtypeRow">
+        select * from t_overduetype where ovt_id=#{ovtId}
+    </select>
 </mapper>

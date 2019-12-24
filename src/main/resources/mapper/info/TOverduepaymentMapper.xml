@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TOverduepaymentMapper">
+    <resultMap id="overRow" type="com.zking.ssm.model.info.TOverduepayment">
+        <id column="ovd_id" property="ovdId" javaType="java.lang.Integer"/>
+        <result column="overdue_id" property="overdueId" javaType="java.lang.Integer"/>
+        <result column="days" property="days" javaType="java.lang.Integer"/>
+        <result column="type_id" property="typeId" javaType="java.lang.Integer"/>
+        <result column="handler_id" property="handlerId" javaType="java.lang.Integer"/>
+        <result column="handler_name" property="handlerName" javaType="java.lang.String"/>
+        <result column="mode" property="mode" javaType="java.lang.String"/>
+        <result column="result" property="result" javaType="java.lang.String"/>
+        <result column="remark" property="remark" javaType="java.lang.String"/>
+    </resultMap>
+    <insert id="addover" parameterType="com.zking.ssm.model.info.TOverduepayment">
+        INSERT INTO t_overduepayment ( `overdue_id`, `days`, `type_id`, `handler_id`, `handler_name`, `mode`, `result`, `remark`)
+        VALUES (#{overdueId}, #{days}, #{typeId}, #{handlerId}, #{handlerName}, #{mode}, #{result}, #{remark});
+    </insert>
+    <update id="updateover" parameterType="com.zking.ssm.model.info.TOverduepayment">
+        UPDATE t_overduepayment
+        <set>
+            <if test=" mode != null and mode!= '' ">
+                `mode`=#{mode},
+            </if>
+            <if test=" remark != null and remark!= '' ">
+                `remark`=#{remark}
+            </if>
+        </set>
+        WHERE (`ovd_id`=#{ovdId});
+    </update>
+    <select id="listover" resultMap="overRow">
+        select  * from t_overduepayment
+        <where>
+            <if test="ovdId!=null and ovdId!=''">
+                and ovd_id like concat('%',#{ovdId},'%')
+            </if>
+            and remark=#{remark}
+        </where>
+    </select>
 </mapper>

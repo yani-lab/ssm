@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.ssm.mapper.info.TLoanstableMapper">
+    <resultMap id="loanstRow" type="com.zking.ssm.model.info.TLoanstable">
+        <id column="lo_id" property="loId" javaType="java.lang.Integer"/>
+        <result column="applyforloanid" property="applyforloanid" javaType="java.lang.Integer"/>
+        <result column="userid" property="userid" javaType="java.lang.Integer"/>
+        <result column="bankcard" property="bankcard" javaType="java.lang.String"/>
+        <result column="loantime" property="loantime" javaType="java.lang.String"/>
+        <result column="money" property="money" javaType="java.lang.String"/>
+        <result column="stagetype_id" property="stagetypeId" javaType="java.lang.String"/>
+        <result column="repayment" property="repayment" javaType="java.lang.String"/>
+        <result column="should" property="should" javaType="java.lang.String"/>
+        <result column="interestrate" property="interestrate" javaType="java.lang.String"/>
+        <result column="user_name" property="userName" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="listloanst" resultMap="loanstRow">
+        select t1.lo_id,t1.applyforloanid,t1.userid,t1.bankcard,t1.loantime,t1.money,t1.stagetype_id,t1.repayment,t1.should,t1.interestrate,t2.user_name
+        from t_loanstable t1,t_sys_user t2
+        <where>
+            t1.userid=t2.user_id
+            <if test="userName != null and userName != ''" >
+                and t2.user_name like concat('%',#{userName},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

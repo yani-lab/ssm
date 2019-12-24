@@ -2,7 +2,6 @@ package com.zking.ssm.model.info;
 
 import lombok.ToString;
 
-import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TLoanstable {
@@ -10,12 +9,13 @@ public class TLoanstable {
     private Integer applyforloanid;
     private Integer userid;
     private String bankcard;
-    private Date loantime;
+    private String loantime;
     private String money;
-    private Integer stagetypeId;
+    private String stagetypeId;
     private String repayment;
     private String should;
     private String interestrate;
+    private String userName;
 
     public Integer getLoId() {
         return loId;
@@ -49,11 +49,11 @@ public class TLoanstable {
         this.bankcard = bankcard;
     }
 
-    public Date getLoantime() {
+    public String getLoantime() {
         return loantime;
     }
 
-    public void setLoantime(Date loantime) {
+    public void setLoantime(String loantime) {
         this.loantime = loantime;
     }
 
@@ -65,11 +65,11 @@ public class TLoanstable {
         this.money = money;
     }
 
-    public Integer getStagetypeId() {
+    public String getStagetypeId() {
         return stagetypeId;
     }
 
-    public void setStagetypeId(Integer stagetypeId) {
+    public void setStagetypeId(String stagetypeId) {
         this.stagetypeId = stagetypeId;
     }
 
@@ -117,5 +117,13 @@ public class TLoanstable {
     @Override
     public int hashCode() {
         return Objects.hash(loId, applyforloanid, userid, bankcard, loantime, money, stagetypeId, repayment, should, interestrate);
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

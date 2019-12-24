@@ -19,6 +19,7 @@
         <result column="user_pay_pwd" property="userPayPwd" javaType="java.lang.String"/>
         <result column="salt" property="salt" javaType="java.lang.String"/>
         <result column="locked" property="locked" javaType="java.lang.Integer"/>
+        <result column="role_id" property="role" javaType="java.lang.Integer"/>
     </resultMap>
     <sql id="row">
         user_id,user_name,user_pwd,user_realName,user_email,user_phone,user_regsitTime,user_fOut,user_referrer,user_referrer_name,user_payto_id,user_card_id,user_head,user_pay_pwd,salt,locked
@@ -29,10 +30,14 @@
         (#{userName}, #{userPwd}, #{salt},0)
     </insert>
     <select id="login" resultType="java.lang.String" resultMap="userRow">
-        select  * from t_sys_user t where t.user_name=#{userName}
+        select t1.*,t2.role_id from t_sys_user t1,t_sys_user_role t2
+        where t1.user_id=t2.user_id and t1.user_name=#{userName}
     </select>
     <select id="selectCountByUserName" resultType="com.zking.ssm.model.sys.TSysUser">
         select  <include refid="row"/> from t_sys_user t where t.user_name=#{userName}
+    </select>
+    <select id="getById" resultMap="userRow">
+        select  * from t_sys_user  where user_id=#{userId}
     </select>
 
 
