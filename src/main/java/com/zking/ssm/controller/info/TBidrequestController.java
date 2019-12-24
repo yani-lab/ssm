@@ -4,6 +4,19 @@ package com.zking.ssm.controller.info;
 @create 2019-12-1215:52
 */
 
+import com.zking.ssm.model.info.TBidrequest;
+import com.zking.ssm.model.sys.TSysTemdictionaryitem;
+import com.zking.ssm.service.info.IBidrequestService;
+import com.zking.ssm.service.sys.ISysTemdictionaryitemService;
+import com.zking.ssm.util.DataProtocol;
+import com.zking.ssm.util.PageBean;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 @RestController
 @RequestMapping("/tBidrequest")
 public class TBidrequestController {
@@ -38,9 +51,6 @@ public class TBidrequestController {
         data.setData(lst);
         return data;
     }
-
-    @Resource
-    private IBidrequestService bidrequestService;
 
 //    @RequestMapping("/listTBidrequest")
 //    public Object  listTBidrequest(TBidrequest tBidrequest) {
