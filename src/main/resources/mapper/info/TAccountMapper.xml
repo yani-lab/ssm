@@ -43,7 +43,9 @@
         </set>
         where user_id = #{userId};
     </update>
-    <select id="selectAccount" resultType="com.zking.ssm.model.info.TAccount" resultMap="accountRow">
-      select * from t_account where user_id=#{userId}
+    <select id="selectAmount" resultType="com.zking.ssm.model.info.TAccount">
+        select usableAmount from t_account where user_id=#{userId}
     </select>
+
+
 </mapper>

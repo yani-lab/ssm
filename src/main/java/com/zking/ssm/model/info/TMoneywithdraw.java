@@ -20,6 +20,8 @@ public class TMoneywithdraw {
     private String accountName;
     private String accountNumber;
     private String forkName;
+    private Integer accountId;
+
 
     public Integer getMoId() {
         return moId;
@@ -148,5 +150,13 @@ public class TMoneywithdraw {
     @Override
     public int hashCode() {
         return Objects.hash(moId, state, remark, auditTime, applyTime, auditorId, applierId, amount, fee, bankName, accountName, accountNumber, forkName);
+    }
+
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 }

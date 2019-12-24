@@ -4,7 +4,9 @@ package com.zking.ssm.service.info;
 @create 2019-12-1216:19
 */
 
+import com.zking.ssm.model.info.TAccount;
 import com.zking.ssm.model.info.TAccountflow;
+import com.zking.ssm.util.PageBean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,5 +24,11 @@ public interface IAccountflowService {
      * @param accountflow
      * @return
      */
-    List<TAccountflow> AllRecord(TAccountflow accountflow);
+    List<TAccountflow> AllRecordpaging(TAccountflow accountflow, PageBean pageBean);
+    /**
+     * 查询可用余额
+     * @param account
+     * @return
+     */
+    TAccountflow selectFlowAccount(TAccountflow account);
 }
