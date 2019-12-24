@@ -5,27 +5,17 @@ import com.zking.ssm.model.sys.TSysUser;
 import com.zking.ssm.service.info.IRepaymentService;
 import com.zking.ssm.service.sys.ISysUserService;
 import com.zking.ssm.util.DataProtocol;
+import com.zking.ssm.util.PageBean;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-
-
-import com.zking.ssm.model.info.TRepayment;
-import com.zking.ssm.service.info.IRepaymentService;
-import com.zking.ssm.util.DataProtocol;
-import com.zking.ssm.util.PageBean;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /*
@@ -110,8 +100,6 @@ public class TRepaymentController {
         }
         return data;
     }
-    @Resource
-    private IRepaymentService repaymentService;
 
     @RequestMapping("/repayMoney")
     public Object repayMoney(TRepayment repayment) {

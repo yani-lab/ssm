@@ -5,6 +5,8 @@ package com.zking.ssm.service.info;
 */
 
 import com.zking.ssm.model.info.TRepayment;
+import com.zking.ssm.util.PageBean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

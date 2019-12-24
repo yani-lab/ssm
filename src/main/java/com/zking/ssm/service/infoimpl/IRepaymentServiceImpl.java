@@ -4,8 +4,6 @@ package com.zking.ssm.service.infoimpl;
 @create 2019-12-1216:30
 */
 
-import com.zking.ssm.mapper.info.TRepaymentMapper;
-import com.zking.ssm.model.info.TRepayment;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zking.ssm.mapper.info.TAccountMapper;
@@ -19,16 +17,29 @@ import com.zking.ssm.model.info.TRepayment;
 import com.zking.ssm.model.sys.TSysTemaccount;
 import com.zking.ssm.model.sys.TSysTemaccountflow;
 import com.zking.ssm.service.info.IRepaymentService;
-import org.springframework.stereotype.Service;
 import com.zking.ssm.util.PageBean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 @Service
 public class IRepaymentServiceImpl implements IRepaymentService {
     @Resource
     private TRepaymentMapper repaymentMapper;
+    @Resource
+    private TAccountMapper accountMapper;
+    @Resource
+    private TAccountflowMapper accountflowMapper;
+    @Resource
+    private TSysTemaccountMapper sysTemaccountMapper;
+    @Resource
+    private TSysTemaccountflowMapper sysTemaccountflowMapper;
+
     @Override
     public List<TRepayment> listrep(TRepayment repayment) {
         return repaymentMapper.listrep(repayment);
@@ -48,23 +59,12 @@ public class IRepaymentServiceImpl implements IRepaymentService {
     public List<TRepayment> getByLoId(TRepayment repayment) {
         return repaymentMapper.getByLoId(repayment);
     }
-    @Resource
-    private TRepaymentMapper tRepaymentMapper;
-    @Resource
-    private TAccountMapper accountMapper;
-    @Resource
-    private TAccountflowMapper accountflowMapper;
-    @Resource
-    private TSysTemaccountMapper sysTemaccountMapper;
-    @Resource
-    private TSysTemaccountflowMapper sysTemaccountflowMapper;
-
     @Override
     public List<TRepayment> selectRepayment(TRepayment repayment, PageBean pageBean) {
         if(pageBean!=null && pageBean.isPagination()){
             PageHelper.startPage(pageBean.getPage(),pageBean.getRows());
         }
-         List<TRepayment> list= tRepaymentMapper.selectRepayment(repayment);
+         List<TRepayment> list= repaymentMapper.selectRepayment(repayment);
         if(pageBean!=null && pageBean.isPagination()){
             PageInfo pageInfo=new PageInfo(list);
             pageBean.setTotal(Long.valueOf(pageInfo.getTotal()).intValue());
@@ -108,10 +108,10 @@ public class IRepaymentServiceImpl implements IRepaymentService {
             tf.setUsableAmount(b);
             tf.setAmount(b);
             tf.setActionType(3);
-            tf.setTradeTime(date);
+            tf.setTradeTime(time);
             sysTemaccountflowMapper.addAccountFlow(tf);
             repayment.setRepayType("已还款");
-            tRepaymentMapper.updateRepayment(repayment);
+            repaymentMapper.updateRepayment(repayment);
         } else {
 
         }

@@ -1,5 +1,9 @@
 package com.zking.ssm.mapper.info;
 
+import com.zking.ssm.model.info.TRepayment;
+
+import java.util.List;
+
 /**
  * @author luo
  * @company zking
