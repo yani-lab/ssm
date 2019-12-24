@@ -10,4 +10,13 @@
     <select id="listaccount" resultMap="accountRow">
          select * from t_sys_temaccount
     </select>
+    <update id="updateUsableAmount" parameterType="com.zking.ssm.model.sys.TSysTemaccount">
+      update  t_sys_temaccount
+      <set>
+          <if test="usableAmount != null and usableAmount != ''">
+              usableAmount = #{usableAmount},
+          </if>
+      </set>
+
+    </update>
 </mapper>

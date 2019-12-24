@@ -18,4 +18,8 @@
             </if>
         </where>
     </select>
+    <insert id="addAccountFlow" parameterType="com.zking.ssm.model.sys.TSysTemaccountflow">
+        insert into t_sys_temaccountflow (tradeTime,actionType, amount, usableAmount)
+         values (#{tradeTime},#{actionType},#{amount},#{usableAmount})
+    </insert>
 </mapper>

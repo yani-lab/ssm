@@ -28,6 +28,23 @@ public class TBidrequest {
     private Date applyTime;
     private Date publishTime;
 
+
+    private TProducttable tProducttable;
+
+    public TProducttable gettProducttable() {
+        return tProducttable;
+    }
+
+    public void settProducttable(TProducttable tProducttable) {
+        this.tProducttable = tProducttable;
+    }
+
+
+
+
+
+
+
     public Integer getBidId() {
         return bidId;
     }
@@ -219,4 +236,6 @@ public class TBidrequest {
     public int hashCode() {
         return Objects.hash(bidId, version, returnType, bidRequestType, bidRequestState, bidRequestAmount, currentRate, monthesReturn, bidCount, totalRewardAmount, currentSum, title, description, note, disableDate, createuserId, disableDays, minBidAmount, applyTime, publishTime);
     }
+
+
 }
