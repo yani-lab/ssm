@@ -40,4 +40,16 @@
     <select id="getByLoId" resultMap="reprow">
         select * from t_repayment where lo_id=#{loId};
     </select>
+    <update id="updateRepayment">
+        update t_repayment
+        <set>
+            <if test="repayType!=null and repayType != ''">
+                repayType=#{repayType}
+            </if>
+        </set>
+        where rep_id=#{rep_id}
+    </update>
+    <select id="selectRepayment" resultType="com.zking.ssm.model.info.TRepayment">
+        select * from t_repayment where bid_id=#{bidId}
+    </select>
 </mapper>

@@ -39,4 +39,9 @@ public class ISysTemdictionaryitemServiceImpl implements ISysTemdictionaryitemSe
     public int deltemdict(TSysTemdictionaryitem sysTemdictionaryitem) {
         return sysTemdictionaryitemMapper.deltemdict(sysTemdictionaryitem);
     }
+
+    @Override
+    public TSysTemdictionaryitem selectTitle(TSysTemdictionaryitem temdictionary) {
+        return sysTemdictionaryitemMapper.selectTitle(temdictionary);
+    }
 }

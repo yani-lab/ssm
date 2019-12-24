@@ -29,4 +29,11 @@ public interface ISysTemdictionaryitemService {
      * 删除
      */
     int deltemdict(TSysTemdictionaryitem sysTemdictionaryitem);
+
+    /**
+     * 查询还款方式
+     * @param temdictionary
+     * @return
+     */
+    TSysTemdictionaryitem selectTitle(TSysTemdictionaryitem temdictionary);
 }

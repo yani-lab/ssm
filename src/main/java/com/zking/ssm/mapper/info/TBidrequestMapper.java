@@ -11,6 +11,12 @@ import java.util.List;
  */
 public interface TBidrequestMapper {
     /**
+     * 查询所有借款项目
+     * @param bidrequest
+     * @return
+     */
+    List<TBidrequest> sellctBidRequest(TBidrequest bidrequest);
+    /**
      * 借款
      * @param tBidrequest
      * @return

@@ -42,4 +42,7 @@
             </if>
         </where>
     </select>
+    <select id="selectTitle" resultMap="TemdictionaryitemRow">
+        select title from t_sys_temdictionaryitem where sysfi_id=#{sysfiId}
+    </select>
 </mapper>

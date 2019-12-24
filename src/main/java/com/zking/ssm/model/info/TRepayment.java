@@ -2,6 +2,8 @@ package com.zking.ssm.model.info;
 
 import lombok.ToString;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TRepayment {
@@ -19,6 +21,9 @@ public class TRepayment {
     private String realityTime;
     private String realityType;
     private String userName;
+    private BigDecimal usableAmount;
+    private Integer accountId;
+
 
     public Integer getRepId() {
         return repId;
@@ -155,5 +160,21 @@ public class TRepayment {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public BigDecimal getUsableAmount() {
+        return usableAmount;
+    }
+
+    public void setUsableAmount(BigDecimal usableAmount) {
+        this.usableAmount = usableAmount;
+    }
+
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
     }
 }

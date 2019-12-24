@@ -6,10 +6,16 @@ package com.zking.ssm.service.info;
 
 import com.zking.ssm.model.info.TBidrequest;
 import com.zking.ssm.util.PageBean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 public interface IBidrequestService {
+    /**
+     * 查询所有借款项目
+     * @param bidrequest
+     * @return
+     */
+    List<TBidrequest> sellctBidRequest(TBidrequest bidrequest, PageBean pageBean);
 
     /**
      * 查询借款

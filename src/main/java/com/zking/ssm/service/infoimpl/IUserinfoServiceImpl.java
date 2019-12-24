@@ -23,4 +23,9 @@ public class IUserinfoServiceImpl implements IUserinfoService {
     public int addUserinfo(TUserinfo userinfo) {
         return userinfoMapper.addUserinfo(userinfo);
     }
+
+    @Override
+    public int updateRealauthId(TUserinfo userinfo) {
+        return userinfoMapper.updateRealauthId(userinfo);
+    }
 }

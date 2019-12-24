@@ -18,6 +18,15 @@
         <result column="email" property="email" javaType="java.lang.String"/>
         <result column="user_id" property="userId" javaType="java.lang.Integer"/>
     </resultMap>
+    <update id="updateRealauthId" parameterType="com.zking.ssm.model.info.TUserinfo">
+      update t_userinfo
+      <set>
+          <if test="realAuthId!=null">
+              realAuthId=#{realAuthId}
+          </if>
+      </set>
+        where user_id = #{userId};
+    </update>
     <select id="listuserinfo" resultMap="userinfoRow">
         select * from t_userinfo where user_id=#{userId}
     </select>
