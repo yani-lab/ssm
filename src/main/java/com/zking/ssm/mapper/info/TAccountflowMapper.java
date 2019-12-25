@@ -1,6 +1,5 @@
 package com.zking.ssm.mapper.info;
 
-import com.zking.ssm.model.info.TAccount;
 import com.zking.ssm.model.info.TAccountflow;
 
 import java.util.List;

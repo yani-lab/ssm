@@ -1,8 +1,13 @@
 package com.zking.ssm.controller.info;
 
+import com.zking.ssm.model.info.TAccount;
+import com.zking.ssm.model.info.TAccountflow;
 import com.zking.ssm.model.info.TRepayment;
 import com.zking.ssm.model.sys.TSysUser;
+import com.zking.ssm.service.info.IAccountService;
+import com.zking.ssm.service.info.IAccountflowService;
 import com.zking.ssm.service.info.IRepaymentService;
+import com.zking.ssm.service.sys.ISysTemdictionaryitemService;
 import com.zking.ssm.service.sys.ISysUserService;
 import com.zking.ssm.util.DataProtocol;
 import com.zking.ssm.util.PageBean;
@@ -12,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,6 +35,12 @@ public class TRepaymentController {
     private IRepaymentService repaymentService;
     @Resource
     private ISysUserService sysUserService;
+    @Resource
+    private ISysTemdictionaryitemService sysTemdictionaryitemService;
+    @Resource
+    private IAccountService accountService;
+    @Resource
+    private IAccountflowService accountflowService;
     @RequestMapping("/listrep")
     public Object listpre(@RequestBody TRepayment repayment) throws ParseException {
         DataProtocol data=new DataProtocol();
@@ -129,6 +141,41 @@ public class TRepaymentController {
             data.setMessage("操作失败");
         }
         data.setData(rep);
+        return data;
+    }
+    @RequestMapping("/listaaa")
+    public Object listaaa(@RequestBody TRepayment repayment){
+        DataProtocol data=new DataProtocol();
+        List<TRepayment> myl=repaymentService.getByLoId(repayment);
+        data.setData(myl);
+        data.setCode(1);
+        return data;
+    }
+    @RequestMapping("/huangkuan")
+    public Object huangkuang(@RequestBody TRepayment repayment) throws ParseException {
+        System.out.println(repayment.toString());
+        DataProtocol data=new DataProtocol();
+        //减少用户余额
+        TAccount account=new TAccount();
+        account.setUserId(repayment.getUserId());
+        account.setUsableAmount(new BigDecimal(repayment.getRefuMoney()));
+        int n=accountService.updateaccount(account);
+        //增加流水
+        TAccountflow accountflow=new TAccountflow();
+        accountflow.setAmount(new BigDecimal(repayment.getRefuMoney()));
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        Date date=df.parse(df.format(new Date()));
+        accountflow.setTradeTime(date);
+        //1=投资
+        accountflow.setActionType(2);
+        accountflow.setNote("还款支出");
+        //投资账户id
+        accountflow.setAccountId(repayment.getBidId());
+        accountflow.setUsableAmount(new BigDecimal(repayment.getRefuMoney()));
+        int n1=accountflowService.addFlow(accountflow);
+        //修改状态
+        repaymentService.updaterep(repayment);
+        data.setCode(1);
         return data;
     }
 }

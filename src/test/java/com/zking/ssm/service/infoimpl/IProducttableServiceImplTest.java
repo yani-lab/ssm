@@ -1,6 +1,6 @@
 package com.zking.ssm.service.infoimpl;
 
-import com.zking.ssm.model.sys.TSysTemdictionary;
+import com.zking.ssm.model.info.TLoloanapplication;
 import com.zking.ssm.service.info.*;
 import com.zking.ssm.service.sys.ISysTemdictionaryService;
 import com.zking.ssm.service.sys.ISysTemdictionaryitemService;
@@ -10,6 +10,7 @@ import test.java.com.zking.test.BaseTest;
 
 import javax.annotation.Resource;
 import java.text.ParseException;
+import java.util.List;
 
 /*
 @author yani
@@ -33,12 +34,22 @@ public class IProducttableServiceImplTest extends BaseTest {
     private ILoanstableService loanstableService;
     @Resource
     private ISysTemdictionaryService sysTemdictionary;
-
+    @Resource
+    private IAccountService accountService;
+    @Resource
+    private IAccountflowService accountflowService;
+    @Resource
+    private IBidrequestService bidrequestService;
+    @Resource
+    private IUserinfoService userinfoService;
+    @Resource
+    private ILoloanapplicationService iLoloanapplicationService;
     @Test
     public void addpro() throws ParseException {
-        TSysTemdictionary t=new TSysTemdictionary();
-        t.setTitle("1");
-        t.setIntro("1");
-        int n=sysTemdictionary.addtemdict(t);
+        List<TLoloanapplication> myl=iLoloanapplicationService.list();
+        for(TLoloanapplication a:myl){
+            System.out.println(a.toString());
+        }
     }
+
     }

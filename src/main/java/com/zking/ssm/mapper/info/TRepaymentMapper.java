@@ -39,4 +39,8 @@ public interface TRepaymentMapper {
      * @return
      */
    int updateRepayment(TRepayment repayment);
+    /**
+     * 新增还款
+     */
+    int addrep(TRepayment repayment);
 }

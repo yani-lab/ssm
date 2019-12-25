@@ -19,4 +19,19 @@ public class ILoanstableServiceImpl implements ILoanstableService {
     public List<TLoanstable> listloanst(TLoanstable loanstable) {
         return loanstableMapper.listloanst(loanstable);
     }
+
+    @Override
+    public int addloanst(TLoanstable loanstable) {
+        return loanstableMapper.addloanst(loanstable);
+    }
+
+    @Override
+    public TLoanstable listxin() {
+        return loanstableMapper.listxin();
+    }
+
+    @Override
+    public List<TLoanstable> listloan(TLoanstable loanstable) {
+        return loanstableMapper.listloan(loanstable);
+    }
 }

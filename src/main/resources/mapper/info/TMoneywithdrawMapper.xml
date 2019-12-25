@@ -6,8 +6,8 @@
         <id column="mo_id" property="moId" javaType="java.lang.Integer"/>
         <result column="state" property="state" javaType="java.lang.Integer"/>
         <result column="remark" property="remark" javaType="java.lang.String"/>
-        <result column="auditTime" property="auditTime" javaType="java.util.Date"/>
-        <result column="applyTime" property="applyTime" javaType="java.util.Date"/>
+        <result column="auditTime" property="auditTime" javaType="java.lang.String"/>
+        <result column="applyTime" property="applyTime" javaType="java.lang.String"/>
         <result column="auditor_id" property="auditorId" javaType="java.lang.Integer"/>
         <result column="applier_id" property="applierId" javaType="java.lang.Integer"/>
         <result column="amount" property="amount" javaType="java.math.BigDecimal"/>

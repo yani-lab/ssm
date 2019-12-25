@@ -27,7 +27,24 @@
             <if test="usableAmount != null and usableAmount != ''">
                 usableAmount = #{usableAmount}
             </if>
-
+        </set>
+        where user_id = #{userId};
+    </update>
+    <update id="updateaccount" parameterType="com.zking.ssm.model.info.TAccount">
+        update t_account
+        <set>
+            <if test="usableAmount != null and usableAmount != ''">
+                usableAmount = usableAmount-#{usableAmount}
+            </if>
+        </set>
+        where user_id = #{userId};
+    </update>
+    <update id="updateac" parameterType="com.zking.ssm.model.info.TAccount">
+        update t_account
+        <set>
+            <if test="usableAmount != null and usableAmount != ''">
+                usableAmount = usableAmount+#{usableAmount}
+            </if>
         </set>
         where user_id = #{userId};
     </update>

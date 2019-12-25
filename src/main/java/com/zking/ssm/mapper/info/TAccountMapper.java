@@ -18,9 +18,6 @@ public interface TAccountMapper {
      * @return
      */
     int updatecoount(TAccount account);
-
-
-
     /**
      * 新增账户
      * @param account
@@ -34,5 +31,13 @@ public interface TAccountMapper {
      * @return
      */
     TAccount selectAmount(TAccount account);
+    /**
+     * 修改账户的可用余额（用于投资）
+     */
+    int updateaccount(TAccount account);
 
+    /**
+     * 修改账户的可用余额（用于贷款）
+     */
+    int updateac(TAccount account);
 }

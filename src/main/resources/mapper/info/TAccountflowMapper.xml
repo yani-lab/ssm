@@ -8,7 +8,8 @@
         <result column="usableAmount" property="usableAmount" javaType="java.math.BigDecimal"/>
         <result column="account_id" property="accountId" javaType="java.lang.Integer"/>
         <result column="actionType" property="actionType" javaType="java.lang.Integer"/>
-
+        <result column="note" property="note" javaType="java.lang.String"/>
+        <result column="amount" property="amount" javaType="java.math.BigDecimal"/>
         <association property="account" javaType="com.zking.ssm.model.info.TAccount">
             <result column="user_id" property="userId" javaType="java.lang.Integer"/>
             <result column="ac_id" property="acId" javaType="java.lang.Integer"/>
@@ -16,8 +17,8 @@
     </resultMap>
 
     <insert id="addFlow" parameterType="com.zking.ssm.model.info.TAccountflow">
-        insert into t_accountflow (amount, actionType, account_id, usableAmount,tradeTime)
-        values (#{amount},#{actionType},#{accountId},#{usableAmount},#{tradeTime})
+        insert into t_accountflow (amount, actionType, account_id, usableAmount,tradeTime,note)
+        values (#{amount},#{actionType},#{accountId},#{usableAmount},#{tradeTime},#{note})
     </insert>
 
     <select id="AllRecordpaging" parameterType="com.zking.ssm.model.info.TAccountflow" resultMap="flowRow">

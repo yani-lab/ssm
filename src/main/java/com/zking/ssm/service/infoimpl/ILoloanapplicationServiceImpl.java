@@ -10,6 +10,7 @@ import com.zking.ssm.service.info.ILoloanapplicationService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class ILoloanapplicationServiceImpl implements ILoloanapplicationService {
@@ -18,5 +19,15 @@ public class ILoloanapplicationServiceImpl implements ILoloanapplicationService 
     @Override
     public int addlolan(TLoloanapplication loloanapplication) {
         return loloanapplicationMapper.addlolan(loloanapplication);
+    }
+
+    @Override
+    public List<TLoloanapplication> list() {
+        return loloanapplicationMapper.list();
+    }
+
+    @Override
+    public int updatlol(TLoloanapplication loloanapplication) {
+        return loloanapplicationMapper.updatlol(loloanapplication);
     }
 }

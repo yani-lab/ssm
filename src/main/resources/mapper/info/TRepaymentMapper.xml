@@ -16,6 +16,10 @@
         <result column="reality_time" property="realityTime" javaType="java.lang.String"/>
         <result column="reality_type" property="realityType" javaType="java.lang.String"/>
     </resultMap>
+    <insert id="addrep" parameterType="com.zking.ssm.model.info.TRepayment">
+        INSERT INTO t_repayment (`user_id`, `bid_id`, `lo_id`, `fen_type`, `capital`, `interest`, `refu_money`, `repayType`, `refu_time`)
+         VALUES (#{userId}, #{bidId}, #{loId}, #{fenType}, #{capital}, #{interest}, #{refuMoney}, #{repayType}, #{refuTime});
+    </insert>
     <update id="updaterep" parameterType="com.zking.ssm.model.info.TRepayment">
         UPDATE t_repayment
         <set>

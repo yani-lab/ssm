@@ -3,15 +3,14 @@ package com.zking.ssm.model.info;
 import lombok.ToString;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Objects;
 @ToString
 public class TMoneywithdraw {
     private Integer moId;
     private Integer state;
     private String remark;
-    private Date auditTime;
-    private Date applyTime;
+    private String auditTime;
+    private String applyTime;
     private Integer auditorId;
     private Integer applierId;
     private BigDecimal amount;
@@ -47,19 +46,19 @@ public class TMoneywithdraw {
         this.remark = remark;
     }
 
-    public Date getAuditTime() {
+    public String getAuditTime() {
         return auditTime;
     }
 
-    public void setAuditTime(Date auditTime) {
+    public void setAuditTime(String auditTime) {
         this.auditTime = auditTime;
     }
 
-    public Date getApplyTime() {
+    public String getApplyTime() {
         return applyTime;
     }
 
-    public void setApplyTime(Date applyTime) {
+    public void setApplyTime(String applyTime) {
         this.applyTime = applyTime;
     }
 

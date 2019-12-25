@@ -13,7 +13,7 @@ public class TBidrequest {
     private Integer bidRequestType;
     private Integer bidRequestState;
     private BigDecimal bidRequestAmount;
-    private BigDecimal currentRate;
+    private String currentRate;
     private Integer monthesReturn;
     private Integer bidCount;
     private BigDecimal totalRewardAmount;
@@ -26,26 +26,11 @@ public class TBidrequest {
     private Integer disableDays;
     private BigDecimal minBidAmount;
     private Date applyTime;
-    private Date publishTime;
+    private String publishTime;
     private String stateName;
-
-
-
-    private TProducttable tProducttable;
-
-    public TProducttable gettProducttable() {
-        return tProducttable;
-    }
-
-    public void settProducttable(TProducttable tProducttable) {
-        this.tProducttable = tProducttable;
-    }
-
-
-
-
-
-
+    private String proName;
+    private String monthesReturntitle;
+    private String returnName;
 
     public Integer getBidId() {
         return bidId;
@@ -95,11 +80,11 @@ public class TBidrequest {
         this.bidRequestAmount = bidRequestAmount;
     }
 
-    public BigDecimal getCurrentRate() {
+    public String getCurrentRate() {
         return currentRate;
     }
 
-    public void setCurrentRate(BigDecimal currentRate) {
+    public void setCurrentRate(String currentRate) {
         this.currentRate = currentRate;
     }
 
@@ -199,11 +184,11 @@ public class TBidrequest {
         this.applyTime = applyTime;
     }
 
-    public Date getPublishTime() {
+    public String getPublishTime() {
         return publishTime;
     }
 
-    public void setPublishTime(Date publishTime) {
+    public void setPublishTime(String publishTime) {
         this.publishTime = publishTime;
     }
 
@@ -248,4 +233,27 @@ public class TBidrequest {
     }
 
 
+    public String getProName() {
+        return proName;
+    }
+
+    public void setProName(String proName) {
+        this.proName = proName;
+    }
+
+    public String getMonthesReturntitle() {
+        return monthesReturntitle;
+    }
+
+    public void setMonthesReturntitle(String monthesReturntitle) {
+        this.monthesReturntitle = monthesReturntitle;
+    }
+
+    public String getReturnName() {
+        return returnName;
+    }
+
+    public void setReturnName(String returnName) {
+        this.returnName = returnName;
+    }
 }

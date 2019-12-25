@@ -27,8 +27,40 @@
       </set>
         where user_id = #{userId};
     </update>
+    <update id="updateziliao" parameterType="com.zking.ssm.model.info.TUserinfo">
+        update t_userinfo
+        <set>
+            <if test="phoneNumber!=null and phoneNumber!=''">
+                phoneNumber=#{phoneNumber},
+            </if>
+            <if test="educationBackgroundId!=null and educationBackgroundId!=''">
+                educationBackground_id=#{educationBackgroundId},
+            </if>
+            <if test="incomeGradeId!=null and incomeGradeId!=''">
+                incomeGrade_id=#{incomeGradeId},
+            </if>
+            <if test="marriageId!=null and marriageId!=''">
+                marriage_id=#{marriageId},
+            </if>
+            <if test="kidCountId!=null and kidCountId!=''">
+                kidCount_id=#{kidCountId},
+            </if>
+            <if test="houseConditionId!=null and houseConditionId!=''">
+                houseCondition_id=#{houseConditionId}
+            </if>
+        </set>
+        where id = #{id};
+    </update>
     <select id="listuserinfo" resultMap="userinfoRow">
-        select * from t_userinfo where user_id=#{userId}
+        select * from t_userinfo
+        <where>
+            <if test="userId!=null and userId!=''">
+                and user_id=#{userId}
+            </if>
+            <if test="id!=null and id!=''">
+                and id=#{id}
+            </if>
+        </where>
     </select>
     <insert id="addUserinfo" parameterType="com.zking.ssm.model.info.TUserinfo">
         insert into t_userinfo (version, bitState, score, realAuthId, user_id)

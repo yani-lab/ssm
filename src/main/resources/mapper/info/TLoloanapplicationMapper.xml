@@ -9,7 +9,7 @@
         <result column="houselicense" property="houselicense" javaType="java.lang.String"/>
         <result column="drivinglicense" property="drivinglicense" javaType="java.lang.String"/>
         <result column="bidtype" property="bidtype" javaType="java.lang.String"/>
-        <result column="applicationtime" property="applicationtime" javaType="java.util.Date"/>
+        <result column="applicationtime" property="applicationtime" javaType="java.lang.String"/>
         <result column="installmentstate" property="installmentstate" javaType="java.lang.String"/>
         <result column="applicationstatus" property="applicationstatus" javaType="java.lang.String"/>
         <result column="handlerid" property="handlerid" javaType="java.lang.Integer"/>
@@ -20,4 +20,16 @@
         VALUES
         (#{userid}, #{appliedamount}, #{bidtype}, #{installmentstate}, #{applicationstatus}, #{applicationtime}, #{reason});
     </insert>
+    <update id="updatlol" parameterType="com.zking.ssm.model.info.TLoloanapplication">
+        update t_loloanapplication
+        <set>
+            <if test="applicationstatus!=null and applicationstatus!=''">
+                applicationstatus=#{applicationstatus}
+            </if>
+        </set>
+        where lolo_id=#{loloId}
+    </update>
+    <select id="list" resultMap="loloanapplicationRow">
+        select * from t_loloanapplication where applicationstatus='未审核'
+    </select>
 </mapper>

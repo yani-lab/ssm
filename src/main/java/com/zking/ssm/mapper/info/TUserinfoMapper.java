@@ -25,4 +25,8 @@ public interface TUserinfoMapper {
      * @return
      */
     int updateRealauthId(TUserinfo userinfo);
+    /**
+     * 修改个人资料
+     */
+    int updateziliao(TUserinfo userinfo);
 }

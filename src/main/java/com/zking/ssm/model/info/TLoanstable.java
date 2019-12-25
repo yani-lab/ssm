@@ -16,6 +16,8 @@ public class TLoanstable {
     private String should;
     private String interestrate;
     private String userName;
+    private String repayName;
+    private String stagetypeName;
 
     public Integer getLoId() {
         return loId;
@@ -125,5 +127,21 @@ public class TLoanstable {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getRepayName() {
+        return repayName;
+    }
+
+    public void setRepayName(String repayName) {
+        this.repayName = repayName;
+    }
+
+    public String getStagetypeName() {
+        return stagetypeName;
+    }
+
+    public void setStagetypeName(String stagetypeName) {
+        this.stagetypeName = stagetypeName;
     }
 }

@@ -6,7 +6,6 @@ package com.zking.ssm.service.info;
 
 import com.zking.ssm.model.info.TBidrequest;
 import com.zking.ssm.util.PageBean;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 public interface IBidrequestService {
@@ -22,10 +21,9 @@ public interface IBidrequestService {
      * @param tBidrequest
      * @return
      */
-    List<TBidrequest> listTBidrequest(TBidrequest tBidrequest);
 
 
-    List<TBidrequest> listTBidrequestPage(TBidrequest tBidrequest, PageBean pageBean);
+    List<TBidrequest> listTBidrequestPage(TBidrequest tBidrequest);
 
 
     /**
@@ -34,6 +32,12 @@ public interface IBidrequestService {
      * @return
      */
     List<TBidrequest> getbidRequestTypeAll(TBidrequest bidrequesttype);
+
+    /**
+     * 修改借款表的id
+     */
+    int updatebid(TBidrequest tBidrequest);
+
 
 
 

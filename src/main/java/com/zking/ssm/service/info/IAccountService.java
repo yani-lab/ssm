@@ -5,8 +5,6 @@ package com.zking.ssm.service.info;
 */
 
 import com.zking.ssm.model.info.TAccount;
-
-import com.zking.ssm.model.info.TAccount;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -34,5 +32,13 @@ public interface IAccountService {
      * @return
      */
     TAccount selectAmount(TAccount account);
+    /**
+     * 修改账户的可用余额（用于投资）
+     */
+    int updateaccount(TAccount account);
+    /**
+     * 修改账户的可用余额（用于贷款）
+     */
+    int updateac(TAccount account);
 
 }

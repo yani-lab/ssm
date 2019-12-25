@@ -118,4 +118,9 @@ public class IRepaymentServiceImpl implements IRepaymentService {
 
         return a;
     }
+
+    @Override
+    public int addrep(TRepayment repayment) {
+        return repaymentMapper.addrep(repayment);
+    }
 }

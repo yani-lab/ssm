@@ -5,8 +5,6 @@ package com.zking.ssm.service.info;
 */
 
 import com.zking.ssm.model.info.TUserinfo;
-
-import com.zking.ssm.model.info.TUserinfo;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,4 +25,8 @@ public interface IUserinfoService {
      * @return
      */
     int updateRealauthId(TUserinfo userinfo);
+    /**
+     * 修改个人资料
+     */
+    int updateziliao(TUserinfo userinfo);
 }

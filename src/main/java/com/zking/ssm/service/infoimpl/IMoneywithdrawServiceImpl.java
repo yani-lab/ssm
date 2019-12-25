@@ -46,7 +46,7 @@ public class IMoneywithdrawServiceImpl implements IMoneywithdrawService {
         Date d = null;
         try {
             d = format.parse(time);
-            money.setApplyTime(d);
+            money.setApplyTime(time);
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -14,6 +14,10 @@
         <result column="interestrate" property="interestrate" javaType="java.lang.String"/>
         <result column="user_name" property="userName" javaType="java.lang.String"/>
     </resultMap>
+    <insert id="addloanst" parameterType="com.zking.ssm.model.info.TLoanstable">
+        INSERT INTO t_loanstable ( `applyforloanid`, `userid`, `loantime`, `money`, `stagetype_id`, `repayment`, `should`, `interestrate`)
+         VALUES ( #{applyforloanid}, #{userid}, #{loantime}, #{money}, #{stagetypeId}, #{repayment}, #{should}, #{interestrate});
+    </insert>
     <select id="listloanst" resultMap="loanstRow">
         select t1.lo_id,t1.applyforloanid,t1.userid,t1.bankcard,t1.loantime,t1.money,t1.stagetype_id,t1.repayment,t1.should,t1.interestrate,t2.user_name
         from t_loanstable t1,t_sys_user t2
@@ -23,5 +27,11 @@
                 and t2.user_name like concat('%',#{userName},'%')
             </if>
         </where>
+    </select>
+    <select id="listxin" resultMap="loanstRow">
+        SELECT * from t_loanstable where lo_id = (SELECT max(lo_id) FROM t_loanstable)
+    </select>
+    <select id="listloan" resultMap="loanstRow">
+        select * from t_loanstable where userid=#{userid}
     </select>
 </mapper>
